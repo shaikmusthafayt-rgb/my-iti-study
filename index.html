@@ -65,7 +65,13 @@ footer {
 </footer>
 <a href="https://www.instagram.com/_top_sigma_king_/" target="_blank">
   Follow me on Instagram
-  @_top_sigma_king_
-</a>
+  @_top_sigma_king_</a>
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/my-iti-study/service-worker.js");
+  });
+}
+</script>
 </body>
     </html>
