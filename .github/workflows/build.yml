@@ -23,7 +23,7 @@ jobs:
           node-version: '20'
 
       - name: Setup Android
-        uses: android-actions/setup-android@v3
+        uses: android-actions/setup-android@v4
         with:
           accept-android-sdk-licenses: true
       - name: Copy Website
