@@ -1,0 +1,10 @@
+{
+  "name": "MY ITI STUDY",
+  "short_name": "ITI STUDY",
+  "description": "ITI Electrician Study Questions and Answers",
+  "start_url": "/my-iti-study/",
+  "scope": "/my-iti-study/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1565c0"
+}
