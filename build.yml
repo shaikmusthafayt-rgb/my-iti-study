@@ -1,0 +1,63 @@
+
+name: Build MY ITI STUDY APK
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Setup Android
+        uses: android-actions/setup-android@v3
+
+      - name: Copy Website
+        run: |
+          mkdir -p www
+          git ls-files -z | while IFS= read -r -d '' f; do
+            case "$f" in
+              .git/*|.github/*) continue ;;
+            esac
+            mkdir -p "www/$(dirname "$f")"
+            cp "$f" "www/$f"
+          done
+
+      - name: Install Capacitor
+        run: |
+          npm init -y
+          npm install @capacitor/core@7 @capacitor/android@7
+          npm install --save-dev @capacitor/cli@7
+
+      - name: Create Android App
+        run: |
+          npx cap init "MY ITI STUDY" "com.myitistudy.app" --web-dir=www
+          npx cap add android
+          npx cap sync android
+
+      - name: Build APK
+        working-directory: android
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleDebug
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: MY-ITI-STUDY-APK
+          path: android/app/build/outputs/apk/debug/app-debug.apk
+          
