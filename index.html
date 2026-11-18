@@ -11,440 +11,263 @@
 <link rel="icon" href="icon-192.png">
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:#f3f6fb;color:#17243a;line-height:1.6}
+
+header{
+ background:white;padding:17px 5%;display:flex;
+ justify-content:space-between;align-items:center;
+ flex-wrap:wrap;gap:12px;box-shadow:0 3px 15px #00000012
 }
-
-body {
-  font-family: Arial, sans-serif;
-  background: #f3f6fb;
-  color: #17243a;
-  line-height: 1.6;
+.logo{font-size:21px;font-weight:800;color:#123b70}
+.languages{display:flex;gap:6px}
+.languages button{
+ border:1px solid #123b70;background:white;color:#123b70;
+ padding:8px 11px;border-radius:20px;font-weight:bold;cursor:pointer
 }
+.languages button.active{background:#123b70;color:white}
 
-header {
-  background: white;
-  padding: 17px 5%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  box-shadow: 0 3px 15px #00000012;
+.hero{
+ background:linear-gradient(135deg,#102b50,#1766b1);
+ color:white;text-align:center;padding:65px 20px
 }
+.hero h1{font-size:clamp(30px,6vw,48px);margin-bottom:12px}
+.hero p{color:#e0edff;max-width:650px;margin:auto;font-size:16px}
 
-.logo {
-  font-size: 21px;
-  font-weight: 800;
-  color: #123b70;
+.container{max-width:1050px;margin:auto;padding:38px 18px}
+.heading{text-align:center;margin-bottom:25px}
+.heading h2{color:#123b70;font-size:27px}
+.heading p{color:#64748b;margin-top:5px}
+
+.year-grid{
+ display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+ gap:18px
 }
-
-.languages {
-  display: flex;
-  gap: 6px;
+.year-card{
+ display:block;background:white;padding:25px 15px;
+ border-radius:16px;text-align:center;
+ border:1px solid #e0e7f0;
+ box-shadow:0 5px 18px #123b7010;
+ cursor:pointer;transition:.2s;text-decoration:none;color:inherit
 }
-
-.languages button {
-  border: 1px solid #123b70;
-  background: white;
-  color: #123b70;
-  padding: 8px 11px;
-  border-radius: 20px;
-  font-weight: bold;
-  cursor: pointer;
+.year-card:hover{
+ transform:translateY(-4px);
+ box-shadow:0 9px 22px #123b7020
 }
+.year-icon{font-size:35px;margin-bottom:8px}
+.year-card h3{color:#123b70;font-size:19px}
+.year-card p{color:#64748b;font-size:13px;margin-top:5px}
 
-.languages button.active {
-  background: #123b70;
-  color: white;
+.ai-card{
+ background:linear-gradient(145deg,#e9f8ff,#e9fff5);
+ border:2px solid #18a9a0;
 }
+.ai-card h3{color:#087c70}
+.ai-card .year-icon{font-size:38px}
 
-.hero {
-  background: linear-gradient(135deg,#102b50,#1766b1);
-  color: white;
-  text-align: center;
-  padding: 65px 20px;
+.trade-section{display:none;margin-top:35px}
+.trade-card{
+ background:white;border-radius:18px;padding:25px;
+ border:1px solid #e0e7f0;
+ box-shadow:0 5px 18px #123b7010;text-align:center
 }
-
-.hero h1 {
-  font-size: clamp(30px,6vw,48px);
-  margin-bottom: 12px;
+.trade-icon{font-size:43px}
+.trade-card h2{color:#123b70;margin:8px 0}
+.trade-card p{color:#64748b;margin-bottom:15px}
+.open-button{
+ display:inline-block;background:#1766b1;color:white;
+ padding:12px 25px;border:none;border-radius:9px;
+ font-weight:bold;cursor:pointer;text-decoration:none
 }
-
-.hero p {
-  color: #e0edff;
-  max-width: 650px;
-  margin: auto;
-  font-size: 16px;
+.open-button:hover{background:#123b70}
+.back-button{
+ display:block;margin:18px auto 0;border:none;
+ background:transparent;color:#1766b1;
+ font-weight:bold;cursor:pointer;padding:8px
 }
-
-.container {
-  max-width: 1050px;
-  margin: auto;
-  padding: 38px 18px;
+.info{
+ margin-top:35px;background:#eaf2ff;padding:25px;
+ border-radius:15px;text-align:center
 }
-
-.heading {
-  text-align: center;
-  margin-bottom: 25px;
+.info h3{color:#123b70;margin-bottom:8px}
+.info p{color:#52647b}
+footer{
+ background:#102b50;color:white;text-align:center;
+ padding:28px 15px;margin-top:25px
 }
+footer p{color:#d6e5f8;font-size:13px;margin-top:6px}
 
-.heading h2 {
-  color: #123b70;
-  font-size: 27px;
+@media(max-width:650px){
+ .year-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ .year-card{padding:20px 8px}
 }
-
-.heading p {
-  color: #64748b;
-  margin-top: 5px;
-}
-
-.year-grid {
-  display: grid;
-  grid-template-columns: repeat(2,minmax(0,1fr));
-  gap: 18px;
-}
-
-.year-card {
-  background: white;
-  padding: 25px 15px;
-  border-radius: 16px;
-  text-align: center;
-  border: 1px solid #e0e7f0;
-  box-shadow: 0 5px 18px #123b7010;
-  cursor: pointer;
-  transition: .2s;
-}
-
-.year-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 9px 22px #123b7020;
-}
-
-.year-icon {
-  font-size: 35px;
-  margin-bottom: 8px;
-}
-
-.year-card h3 {
-  color: #123b70;
-  font-size: 19px;
-}
-
-.year-card p {
-  color: #64748b;
-  font-size: 13px;
-  margin-top: 5px;
-}
-
-.trade-section {
-  display: none;
-  margin-top: 35px;
-}
-
-.trade-card {
-  background: white;
-  border-radius: 18px;
-  padding: 25px;
-  border: 1px solid #e0e7f0;
-  box-shadow: 0 5px 18px #123b7010;
-  text-align: center;
-}
-
-.trade-icon {
-  font-size: 43px;
-}
-
-.trade-card h2 {
-  color: #123b70;
-  margin: 8px 0;
-}
-
-.trade-card p {
-  color: #64748b;
-  margin-bottom: 15px;
-}
-
-.open-button {
-  display: inline-block;
-  background: #1766b1;
-  color: white;
-  padding: 12px 25px;
-  border: none;
-  border-radius: 9px;
-  font-weight: bold;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.open-button:hover {
-  background: #123b70;
-}
-
-.back-button {
-  display: block;
-  margin: 18px auto 0;
-  border: none;
-  background: transparent;
-  color: #1766b1;
-  font-weight: bold;
-  cursor: pointer;
-  padding: 8px;
-}
-
-.info {
-  margin-top: 35px;
-  background: #eaf2ff;
-  padding: 25px;
-  border-radius: 15px;
-  text-align: center;
-}
-
-.info h3 {
-  color: #123b70;
-  margin-bottom: 8px;
-}
-
-.info p {
-  color: #52647b;
-}
-
-footer {
-  background: #102b50;
-  color: white;
-  text-align: center;
-  padding: 28px 15px;
-  margin-top: 25px;
-}
-
-footer p {
-  color: #d6e5f8;
-  font-size: 13px;
-  margin-top: 6px;
-}
-
-@media(max-width:500px) {
-  header {
-    justify-content: center;
-  }
-
-  .logo {
-    width: 100%;
-    text-align: center;
-  }
-
-  .year-grid {
-    gap: 12px;
-  }
-
-  .year-card {
-    padding: 20px 8px;
-  }
-
-  .hero {
-    padding: 50px 17px;
-  }
+@media(max-width:500px){
+ header{justify-content:center}
+ .logo{width:100%;text-align:center}
+ .hero{padding:50px 17px}
 }
 </style>
 </head>
 
 <body>
-
 <header>
-  <div class="logo">⚡ MY ITI STUDY</div>
-
-  <div class="languages">
-    <button class="active" id="enBtn" onclick="changeLanguage('en')">English</button>
-    <button id="teBtn" onclick="changeLanguage('te')">తెలుగు</button>
-    <button id="hiBtn" onclick="changeLanguage('hi')">हिन्दी</button>
-  </div>
+ <div class="logo">⚡ MY ITI STUDY</div>
+ <div class="languages">
+  <button class="active" id="enBtn" onclick="changeLanguage('en')">English</button>
+  <button id="teBtn" onclick="changeLanguage('te')">తెలుగు</button>
+  <button id="hiBtn" onclick="changeLanguage('hi')">हिन्दी</button>
+ </div>
 </header>
 
 <section class="hero">
-  <h1 data-en="Welcome to MY ITI STUDY"
-      data-te="MY ITI STUDY కి స్వాగతం"
-      data-hi="MY ITI STUDY में आपका स्वागत है">
-    Welcome to MY ITI STUDY
-  </h1>
-
-  <p data-en="Learn important questions and answers. Improve your ITI knowledge step by step."
-     data-te="ముఖ్యమైన ప్రశ్నలు మరియు సమాధానాలను నేర్చుకోండి. మీ ITI పరిజ్ఞానాన్ని పెంచుకోండి."
-     data-hi="महत्वपूर्ण प्रश्न और उत्तर सीखें। धीरे-धीरे अपना ITI ज्ञान बढ़ाएँ।">
-    Learn important questions and answers. Improve your ITI knowledge step by step.
-  </p>
+ <h1 data-en="Welcome to MY ITI STUDY"
+ data-te="MY ITI STUDY కి స్వాగతం"
+ data-hi="MY ITI STUDY में आपका स्वागत है">
+ Welcome to MY ITI STUDY
+ </h1>
+ <p data-en="Learn important questions and answers. Improve your ITI knowledge step by step."
+ data-te="ముఖ్యమైన ప్రశ్నలు మరియు సమాధానాలను నేర్చుకోండి. మీ ITI పరిజ్ఞానాన్ని పెంచుకోండి."
+ data-hi="महत्वपूर्ण प्रश्न और उत्तर सीखें। धीरे-धीरे अपना ITI ज्ञान बढ़ाएँ।">
+ Learn important questions and answers. Improve your ITI knowledge step by step.
+ </p>
 </section>
 
 <main class="container">
+ <section id="yearSection">
+  <div class="heading">
+   <h2 data-en="Choose Your Year"
+   data-te="మీ సంవత్సరాన్ని ఎంచుకోండి"
+   data-hi="अपना वर्ष चुनें">Choose Your Year</h2>
+   <p data-en="Select your ITI study year"
+   data-te="మీ ITI చదువు సంవత్సరాన్ని ఎంచుకోండి"
+   data-hi="अपना ITI पढ़ाई का वर्ष चुनें">Select your ITI study year</p>
+  </div>
 
-  <section id="yearSection">
-    <div class="heading">
-      <h2 data-en="Choose Your Year"
-          data-te="మీ సంవత్సరాన్ని ఎంచుకోండి"
-          data-hi="अपना वर्ष चुनें">
-        Choose Your Year
-      </h2>
+  <div class="year-grid">
+   <div class="year-card" onclick="selectYear('first')">
+    <div class="year-icon">📘</div>
+    <h3 data-en="FIRST YEAR" data-te="మొదటి సంవత్సరం" data-hi="पहला वर्ष">FIRST YEAR</h3>
+    <p data-en="First Year Electrician" data-te="మొదటి సంవత్సరం ఎలక్ట్రీషియన్" data-hi="पहले वर्ष का इलेक्ट्रीशियन">First Year Electrician</p>
+   </div>
 
-      <p data-en="Select your ITI study year"
-         data-te="మీ ITI చదువు సంవత్సరాన్ని ఎంచుకోండి"
-         data-hi="अपना ITI पढ़ाई का वर्ष चुनें">
-        Select your ITI study year
-      </p>
-    </div>
+   <div class="year-card" onclick="selectYear('second')">
+    <div class="year-icon">📚</div>
+    <h3 data-en="SECOND YEAR" data-te="రెండవ సంవత్సరం" data-hi="दूसरा वर्ष">SECOND YEAR</h3>
+    <p data-en="Second Year Electrician" data-te="రెండవ సంవత్సరం ఎలక్ట్రీషియన్" data-hi="दूसरे वर्ष का इलेक्ट्रीशियन">Second Year Electrician</p>
+   </div>
 
-    <div class="year-grid">
+   <a href="ai-teacher.html" class="year-card ai-card">
+    <div class="year-icon">🤖</div>
+    <h3>AI TEACHER</h3>
+    <p>Meet Your AI Guruji</p>
+   </a>
+  </div>
+ </section>
 
-      <div class="year-card" onclick="selectYear('first')">
-        <div class="year-icon">📘</div>
-        <h3 data-en="FIRST YEAR"
-            data-te="మొదటి సంవత్సరం"
-            data-hi="पहला वर्ष">FIRST YEAR</h3>
-        <p data-en="First Year Electrician"
-           data-te="మొదటి సంవత్సరం ఎలక్ట్రీషియన్"
-           data-hi="पहले वर्ष का इलेक्ट्रीशियन">
-          First Year Electrician
-        </p>
-      </div>
+ <section class="trade-section" id="tradeSection">
+  <div class="heading">
+   <h2 id="selectedYear">FIRST YEAR</h2>
+   <p data-en="Select Your Trade" data-te="మీ ట్రేడ్‌ను ఎంచుకోండి" data-hi="अपना ट्रेड चुनें">Select Your Trade</p>
+  </div>
 
-      <div class="year-card" onclick="selectYear('second')">
-        <div class="year-icon">📚</div>
-        <h3 data-en="SECOND YEAR"
-            data-te="రెండవ సంవత్సరం"
-            data-hi="दूसरा वर्ष">SECOND YEAR</h3>
-        <p data-en="Second Year Electrician"
-           data-te="రెండవ సంవత్సరం ఎలక్ట్రీషియన్"
-           data-hi="दूसरे वर्ष का इलेक्ट्रीషియన్">
-          Second Year Electrician
-        </p>
-      </div>
+  <div class="trade-card">
+   <div class="trade-icon">⚡</div>
+   <h2>ELECTRICIAN</h2>
+   <p data-en="Important Electrician Questions & Answers"
+   data-te="ముఖ్యమైన ఎలక్ట్రీషియన్ ప్రశ్నలు మరియు సమాధానాలు"
+   data-hi="महत्वपूर्ण इलेक्ट्रीशियन प्रश्न और उत्तर">
+   Important Electrician Questions & Answers</p>
+   <a href="first-year.html" class="open-button" id="tradeLink"
+   data-en="Open Questions →" data-te="ప్రశ్నలను తెరవండి →" data-hi="प्रश्न खोलें →">
+   Open Questions →</a>
+  </div>
 
-    </div>
-  </section>
+  <button class="back-button" onclick="goBack()"
+  data-en="← Back to Year Selection"
+  data-te="← సంవత్సర ఎంపికకు తిరిగి వెళ్లండి"
+  data-hi="← वर्ष चुनने वापस जाएँ">
+  ← Back to Year Selection</button>
+ </section>
 
-  <section class="trade-section" id="tradeSection">
-    <div class="heading">
-      <h2 id="selectedYear">FIRST YEAR</h2>
-      <p data-en="Select Your Trade"
-         data-te="మీ ట్రేడ్‌ను ఎంచుకోండి"
-         data-hi="अपना ट्रेड चुनें">
-        Select Your Trade
-      </p>
-    </div>
-
-    <div class="trade-card">
-      <div class="trade-icon">⚡</div>
-      <h2>ELECTRICIAN</h2>
-
-      <p data-en="Important Electrician Questions & Answers"
-         data-te="ముఖ్యమైన ఎలక్ట్రీషియన్ ప్రశ్నలు మరియు సమాధానాలు"
-         data-hi="महत्वपूर्ण इलेक्ट्रीशियन प्रश्न और उत्तर">
-        Important Electrician Questions & Answers
-      </p>
-
-      <a href="first-year.html" class="open-button" id="tradeLink"
-         data-en="Open Questions →"
-         data-te="ప్రశ్నలను తెరవండి →"
-         data-hi="प्रश्न खोलें →">
-        Open Questions →
-      </a>
-    </div>
-
-    <button class="back-button" onclick="goBack()"
-      data-en="← Back to Year Selection"
-      data-te="← సంవత్సర ఎంపికకు తిరిగి వెళ్లండి"
-      data-hi="← वर्ष चुनने वापस जाएँ">
-      ← Back to Year Selection
-    </button>
-  </section>
-
-  <section class="info">
-    <h3 data-en="Learn • Practice • Improve"
-        data-te="నేర్చుకోండి • సాధన చేయండి • అభివృద్ధి చెందండి"
-        data-hi="सीखें • अभ्यास करें • आगे बढ़ें">
-      Learn • Practice • Improve
-    </h3>
-
-    <p data-en="Simple learning for ITI Electrician students."
-       data-te="ITI ఎలక్ట్రీషియన్ విద్యార్థుల కోసం సులభమైన అభ్యాసం."
-       data-hi="ITI इलेक्ट्रीशियन छात्रों के लिए आसान पढ़ाई।">
-      Simple learning for ITI Electrician students.
-    </p>
-  </section>
-
+ <section class="info">
+  <h3 data-en="Learn • Practice • Improve"
+  data-te="నేర్చుకోండి • సాధన చేయండి • అభివృద్ధి చెందండి"
+  data-hi="सीखें • अभ्यास करें • आगे बढ़ें">
+  Learn • Practice • Improve</h3>
+  <p data-en="Simple learning for ITI Electrician students."
+  data-te="ITI ఎలక్ట్రీషియన్ విద్యార్థుల కోసం సులభమైన అభ్యాసం."
+  data-hi="ITI इलेक्ट्रीशियन छात्रों के लिए आसान पढ़ाई.">
+  Simple learning for ITI Electrician students.</p>
+ </section>
 </main>
 
 <footer>
-  <h3>⚡ MY ITI STUDY</h3>
-  <p>Learn • Practice • Improve</p>
-  <p>© 2026 MY ITI STUDY</p>
+ <h3>⚡ MY ITI STUDY</h3>
+ <p>Learn • Practice • Improve</p>
+ <p>© 2026 MY ITI STUDY</p>
 </footer>
 
 <script>
-let currentLanguage = "en";
+let currentLanguage="en";
 
-function changeLanguage(language) {
-  currentLanguage = language;
-  document.documentElement.lang = language;
+function changeLanguage(language){
+ currentLanguage=language;
+ document.documentElement.lang=language;
 
-  document.querySelectorAll("[data-en]").forEach(function(element) {
-    element.textContent = element.getAttribute("data-" + language);
+ document.querySelectorAll("[data-en]").forEach(function(element){
+  element.textContent=element.getAttribute("data-"+language);
+ });
+
+ document.getElementById("enBtn").classList.toggle("active",language==="en");
+ document.getElementById("teBtn").classList.toggle("active",language==="te");
+ document.getElementById("hiBtn").classList.toggle("active",language==="hi");
+
+ try{localStorage.setItem("myItiLanguage",language)}catch(error){}
+}
+
+function selectYear(year){
+ document.getElementById("yearSection").style.display="none";
+ document.getElementById("tradeSection").style.display="block";
+
+ let title="";
+ let link="";
+
+ if(year==="first"){
+  title=currentLanguage==="te"?"మొదటి సంవత్సరం":
+  currentLanguage==="hi"?"पहला वर्ष":"FIRST YEAR";
+  link="first-year.html";
+ }else{
+  title=currentLanguage==="te"?"రెండవ సంవత్సరం":
+  currentLanguage==="hi"?"दूसरा वर्ष":"SECOND YEAR";
+  link="second-year.html";
+ }
+
+ document.getElementById("selectedYear").textContent=title;
+ document.getElementById("tradeLink").href=link;
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function goBack(){
+ document.getElementById("yearSection").style.display="block";
+ document.getElementById("tradeSection").style.display="none";
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+
+try{
+ const savedLanguage=localStorage.getItem("myItiLanguage");
+ if(["en","te","hi"].includes(savedLanguage)){
+  changeLanguage(savedLanguage);
+ }
+}catch(error){}
+
+if("serviceWorker" in navigator){
+ window.addEventListener("load",function(){
+  navigator.serviceWorker.register("service-worker.js")
+  .catch(function(error){
+   console.log("Service worker error:",error);
   });
-
-  document.getElementById("enBtn").classList.toggle("active", language === "en");
-  document.getElementById("teBtn").classList.toggle("active", language === "te");
-  document.getElementById("hiBtn").classList.toggle("active", language === "hi");
-
-  try {
-    localStorage.setItem("myItiLanguage", language);
-  } catch(error) {}
-}
-
-function selectYear(year) {
-  document.getElementById("yearSection").style.display = "none";
-  document.getElementById("tradeSection").style.display = "block";
-
-  let title = "";
-  let link = "";
-
-  if (year === "first") {
-    title = currentLanguage === "te" ? "మొదటి సంవత్సరం" :
-            currentLanguage === "hi" ? "पहला वर्ष" : "FIRST YEAR";
-    link = "first-year.html";
-  } else {
-    title = currentLanguage === "te" ? "రెండవ సంవత్సరం" :
-            currentLanguage === "hi" ? "दूसरा वर्ष" : "SECOND YEAR";
-    link = "second-year.html";
-  }
-
-  document.getElementById("selectedYear").textContent = title;
-  document.getElementById("tradeLink").href = link;
-  window.scrollTo({top: 0, behavior: "smooth"});
-}
-
-function goBack() {
-  document.getElementById("yearSection").style.display = "block";
-  document.getElementById("tradeSection").style.display = "none";
-  window.scrollTo({top: 0, behavior: "smooth"});
-}
-
-try {
-  const savedLanguage = localStorage.getItem("myItiLanguage");
-  if (["en", "te", "hi"].includes(savedLanguage)) {
-    changeLanguage(savedLanguage);
-  }
-} catch(error) {}
-
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", function() {
-    navigator.serviceWorker.register("service-worker.js")
-      .catch(function(error) {
-        console.log("Service worker error:", error);
-      });
-  });
+ });
 }
 </script>
-
 </body>
 </html>
-
