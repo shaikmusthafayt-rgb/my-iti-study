@@ -1,77 +1,475 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#123b70">
 
-<link rel="manifest" href="/my-iti-study/manifest.json">
-<meta name="theme-color" content="#1565c0"><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MY ITI STUDY</title>
+  <title>MY ITI STUDY | Learn • Practice • Improve</title>
 
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f2f6fc;
-  color: #222;
-  text-align: center;
-}
-header {
-  background: #123b68;
-  color: white;
-  padding: 28px 10px;
-}
-h1 { margin: 0; }
-main { padding: 25px 15px; }
-.card {
-  background: white;
-  margin: 18px auto;
-  padding: 25px;
-  max-width: 400px;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px #ccc;
-}
-footer {
-  padding: 20px;
-  color: #555;
-}
-</style>
+  <meta name="description" content="MY ITI STUDY - Learn ITI Electrician subjects, practice questions and improve your knowledge.">
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon-192.png">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f6fc;
+      color: #17243a;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .navbar {
+      background: #ffffff;
+      padding: 15px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+
+    .brand {
+      color: #123b70;
+      font-size: 21px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+
+    .language {
+      display: flex;
+      gap: 8px;
+    }
+
+    .language button {
+      border: 1px solid #123b70;
+      background: white;
+      color: #123b70;
+      padding: 8px 13px;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .language button.active {
+      background: #123b70;
+      color: white;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #102d55, #1766b1);
+      color: white;
+      padding: 75px 20px;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      padding: 7px 17px;
+      border-radius: 30px;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(34px, 7vw, 58px);
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: 0 auto 28px;
+      color: #e5efff;
+      font-size: 17px;
+    }
+
+    .hero-button {
+      display: inline-block;
+      background: #ffffff;
+      color: #123b70;
+      padding: 13px 25px;
+      border-radius: 9px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .hero-button:hover {
+      background: #e8f1ff;
+      transform: translateY(-2px);
+    }
+
+    .section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 55px 20px;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .section-heading h2 {
+      color: #123b70;
+      font-size: 29px;
+      margin-bottom: 8px;
+    }
+
+    .section-heading p {
+      color: #64748b;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 27px 22px;
+      border-radius: 16px;
+      border: 1px solid #e5eaf2;
+      box-shadow: 0 5px 18px rgba(20,50,90,0.06);
+      transition: 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(20,50,90,0.12);
+    }
+
+    .card-icon {
+      width: 55px;
+      height: 55px;
+      border-radius: 13px;
+      background: #eaf2ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 27px;
+      margin-bottom: 17px;
+    }
+
+    .card h3 {
+      color: #123b70;
+      font-size: 21px;
+      margin-bottom: 9px;
+    }
+
+    .card p {
+      color: #64748b;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .card-link {
+      color: #1766b1;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .coming {
+      display: inline-block;
+      background: #fff3d6;
+      color: #956000;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .about {
+      background: white;
+      border-radius: 18px;
+      padding: 32px 25px;
+      text-align: center;
+      border: 1px solid #e5eaf2;
+    }
+
+    .about h2 {
+      color: #123b70;
+      margin-bottom: 12px;
+    }
+
+    .about p {
+      color: #64748b;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    footer {
+      background: #102d55;
+      color: white;
+      text-align: center;
+      padding: 30px 15px;
+    }
+
+    footer p {
+      color: #d6e5f8;
+      font-size: 14px;
+      margin: 5px;
+    }
+
+    footer a {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .navbar {
+        padding: 13px 15px;
+      }
+
+      .brand {
+        font-size: 18px;
+      }
+
+      .hero {
+        padding: 58px 18px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .section {
+        padding: 40px 16px;
+      }
+
+      .section-heading h2 {
+        font-size: 25px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-  <h1>MY ITI STUDY</h1>
-  <p>Learn • Practice • Improve</p>
-</header>
+  <nav class="navbar">
+    <div class="brand">⚡ MY ITI STUDY</div>
 
-<main>
-  <h2>Welcome to MY ITI STUDY</h2>
-  <p>ITI Electrician Study Questions and Answers</p>
+    <div class="language">
+      <button id="englishBtn" class="active"
+        onclick="changeLanguage('en')" aria-pressed="true">
+        English
+      </button>
 
-  <a href="first-year.html" style="text-decoration:none; color:inherit;">
-  <div class="card">
-    <h2>FIRST YEAR</h2>
-    <p>Electrician Questions and Answers</p>
-  </div>
-</a>
+      <button id="teluguBtn"
+        onclick="changeLanguage('te')" aria-pressed="false">
+        తెలుగు
+      </button>
+    </div>
+  </nav>
 
-<div class="card">
-  <h2>SECOND YEAR</h2>
-  <p>Study materials coming soon!</p>
-</div>
+  <header class="hero">
+    <div class="hero-content">
+      <span class="hero-tag" data-en="YOUR LEARNING PLATFORM"
+        data-te="మీ అభ్యాస వేదిక">
+        YOUR LEARNING PLATFORM
+      </span>
 
-<footer>
-  <p>Made for ITI Students ❤️</p>
-</footer>
-<a href="https://www.instagram.com/_top_sigma_king_/" target="_blank">
-  Follow me on Instagram
-  @_top_sigma_king_</a>
-<script>
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("/my-iti-study/service-worker.js");
-  });
-}
-</script>
+      <h1 data-en="Welcome to MY ITI STUDY"
+        data-te="MY ITI STUDY కి స్వాగతం">
+        Welcome to MY ITI STUDY
+      </h1>
+
+      <p data-en="Learn better, practice more and build your future with simple ITI study materials."
+        data-te="సులభమైన ITI స్టడీ మెటీరియల్‌తో బాగా నేర్చుకోండి, ఎక్కువగా సాధన చేయండి మరియు మీ భవిష్యత్తును నిర్మించుకోండి.">
+        Learn better, practice more and build your future with simple ITI study materials.
+      </p>
+
+      <a href="#courses" class="hero-button"
+        data-en="Explore Courses →"
+        data-te="కోర్సులను చూడండి →">
+        Explore Courses →
+      </a>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="section" id="courses">
+      <div class="section-heading">
+        <h2 data-en="Explore Your Studies"
+          data-te="మీ చదువును ప్రారంభించండి">
+          Explore Your Studies
+        </h2>
+
+        <p data-en="Choose your year and start learning."
+          data-te="మీ సంవత్సరాన్ని ఎంచుకుని నేర్చుకోవడం ప్రారంభించండి.">
+          Choose your year and start learning.
+        </p>
+      </div>
+
+      <div class="cards">
+
+        <a href="first-year.html" class="card">
+          <div class="card-icon">📘</div>
+
+          <h3 data-en="FIRST YEAR"
+            data-te="మొదటి సంవత్సరం">
+            FIRST YEAR
+          </h3>
+
+          <p data-en="Electrician first year questions and answers. Learn the basics step by step."
+            data-te="ఎలక్ట్రీషియన్ మొదటి సంవత్సరం ప్రశ్నలు మరియు సమాధానాలు. ప్రాథమిక విషయాలను దశలవారీగా నేర్చుకోండి.">
+            Electrician first year questions and answers. Learn the basics step by step.
+          </p>
+
+          <span class="card-link"
+            data-en="Start Learning →"
+            data-te="నేర్చుకోవడం ప్రారంభించండి →">
+            Start Learning →
+          </span>
+        </a>
+
+        <div class="card">
+          <div class="card-icon">📚</div>
+
+          <h3 data-en="SECOND YEAR"
+            data-te="రెండవ సంవత్సరం">
+            SECOND YEAR
+          </h3>
+
+          <p data-en="Second year Electrician study materials and practice questions."
+            data-te="రెండవ సంవత్సరం ఎలక్ట్రీషియన్ స్టడీ మెటీరియల్ మరియు ప్రాక్టీస్ ప్రశ్నలు.">
+            Second year Electrician study materials and practice questions.
+          </p>
+
+          <span class="coming"
+            data-en="COMING SOON"
+            data-te="త్వరలో వస్తుంది">
+            COMING SOON
+          </span>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">⚡</div>
+
+          <h3 data-en="ELECTRICIAN TRADE"
+            data-te="ఎలక్ట్రీషియన్ ట్రేడ్">
+            ELECTRICIAN TRADE
+          </h3>
+
+          <p data-en="Build your electrical knowledge with simple explanations and important topics."
+            data-te="సులభమైన వివరణలు మరియు ముఖ్యమైన అంశాలతో మీ ఎలక్ట్రికల్ పరిజ్ఞానాన్ని పెంచుకోండి.">
+            Build your electrical knowledge with simple explanations and important topics.
+          </p>
+
+          <span class="coming"
+            data-en="MORE CONTENT SOON"
+            data-te="మరిన్ని విషయాలు త్వరలో">
+            MORE CONTENT SOON
+          </span>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="about">
+        <h2 data-en="Learn • Practice • Improve"
+          data-te="నేర్చుకోండి • సాధన చేయండి • అభివృద్ధి చెందండి">
+          Learn • Practice • Improve
+        </h2>
+
+        <p data-en="MY ITI STUDY is made to help ITI students understand their subjects and improve their knowledge one step at a time."
+          data-te="ITI విద్యార్థులు తమ పాఠ్యాంశాలను అర్థం చేసుకోవడానికి మరియు ఒక్కో అడుగుగా తమ జ్ఞానాన్ని పెంచుకోవడానికి MY ITI STUDY రూపొందించబడింది.">
+          MY ITI STUDY is made to help ITI students understand their subjects and improve their knowledge one step at a time.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <h3>⚡ MY ITI STUDY</h3>
+
+    <p data-en="Made for ITI Students"
+      data-te="ITI విద్యార్థుల కోసం రూపొందించబడింది">
+      Made for ITI Students
+    </p>
+
+    <p>Learn • Practice • Improve</p>
+
+    <p>
+      <a href="https://www.instagram.com/_top_sigma_king_/"
+        target="_blank" rel="noopener noreferrer">
+        Instagram
+      </a>
+    </p>
+
+    <p>© 2026 MY ITI STUDY</p>
+  </footer>
+
+  <script>
+    function changeLanguage(language) {
+      document.documentElement.lang = language;
+
+      document.querySelectorAll("[data-en]").forEach(function(element) {
+        element.textContent =
+          language === "te"
+            ? element.getAttribute("data-te")
+            : element.getAttribute("data-en");
+      });
+
+      const englishBtn = document.getElementById("englishBtn");
+      const teluguBtn = document.getElementById("teluguBtn");
+
+      englishBtn.classList.toggle("active", language === "en");
+      teluguBtn.classList.toggle("active", language === "te");
+
+      englishBtn.setAttribute("aria-pressed", language === "en");
+      teluguBtn.setAttribute("aria-pressed", language === "te");
+
+      try {
+        localStorage.setItem("myItiLanguage", language);
+      } catch (error) {
+        // Language switching still works if storage is unavailable.
+      }
+    }
+
+    try {
+      const savedLanguage = localStorage.getItem("myItiLanguage");
+      if (savedLanguage === "te" || savedLanguage === "en") {
+        changeLanguage(savedLanguage);
+      }
+    } catch (error) {
+      // English is the default language.
+    }
+
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", function() {
+        navigator.serviceWorker.register("service-worker.js")
+          .catch(function(error) {
+            console.log("Service worker registration failed:", error);
+          });
+      });
+    }
+  </script>
+
 </body>
-    </html>
+      </html>
+      
