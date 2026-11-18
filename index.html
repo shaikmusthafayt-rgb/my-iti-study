@@ -4,76 +4,54 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#123b70">
-<title>MY ITI STUDY - First Year</title>
+<meta name="theme-color" content="#102b50">
+<title>MY ITI STUDY</title>
+<meta name="description" content="Learn ITI Electrician questions and answers in English, Telugu and Hindi.">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png">
 
 <style>
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  margin: 0;
   font-family: Arial, sans-serif;
-  background: #f1f5f9;
-  color: #1e293b;
+  background: #f3f6fb;
+  color: #17243a;
+  line-height: 1.6;
 }
 
 header {
-  background: linear-gradient(135deg, #123b70, #1976d2);
-  color: white;
-  text-align: center;
-  padding: 28px 15px;
+  background: white;
+  padding: 17px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  box-shadow: 0 3px 15px #00000012;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 27px;
-}
-
-header p {
-  margin: 8px 0 0;
-  font-size: 15px;
-}
-
-main {
-  max-width: 850px;
-  margin: auto;
-  padding: 18px 14px;
-}
-
-.heading {
-  text-align: center;
-  margin: 12px 0 20px;
-}
-
-.heading h2 {
+.logo {
+  font-size: 21px;
+  font-weight: 800;
   color: #123b70;
-  font-size: 22px;
-  margin-bottom: 7px;
-}
-
-.heading p {
-  color: #64748b;
-  font-size: 14px;
 }
 
 .languages {
   display: flex;
-  gap: 9px;
-  justify-content: center;
-  margin: 20px 0;
+  gap: 6px;
 }
 
 .languages button {
-  flex: 1;
-  max-width: 150px;
-  padding: 12px 8px;
-  border: 1px solid #cbd5e1;
-  border-radius: 9px;
+  border: 1px solid #123b70;
   background: white;
   color: #123b70;
-  font-size: 15px;
+  padding: 8px 11px;
+  border-radius: 20px;
   font-weight: bold;
   cursor: pointer;
 }
@@ -81,97 +59,192 @@ main {
 .languages button.active {
   background: #123b70;
   color: white;
-  border-color: #123b70;
 }
 
-.search-box {
-  display: flex;
-  gap: 8px;
-  margin: 20px 0;
-}
-
-.search-box input {
-  min-width: 0;
-  flex: 1;
-  padding: 14px;
-  border: 1px solid #cbd5e1;
-  border-radius: 9px;
-  font-size: 15px;
-  outline: none;
-}
-
-.search-box input:focus {
-  border-color: #1976d2;
-}
-
-.search-box button {
-  padding: 12px 16px;
-  background: #1976d2;
+.hero {
+  background: linear-gradient(135deg,#102b50,#1766b1);
   color: white;
-  border: 0;
+  text-align: center;
+  padding: 65px 20px;
+}
+
+.hero h1 {
+  font-size: clamp(30px,6vw,48px);
+  margin-bottom: 12px;
+}
+
+.hero p {
+  color: #e0edff;
+  max-width: 650px;
+  margin: auto;
+  font-size: 16px;
+}
+
+.container {
+  max-width: 1050px;
+  margin: auto;
+  padding: 38px 18px;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.heading h2 {
+  color: #123b70;
+  font-size: 27px;
+}
+
+.heading p {
+  color: #64748b;
+  margin-top: 5px;
+}
+
+.year-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 18px;
+}
+
+.year-card {
+  background: white;
+  padding: 25px 15px;
+  border-radius: 16px;
+  text-align: center;
+  border: 1px solid #e0e7f0;
+  box-shadow: 0 5px 18px #123b7010;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.year-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 9px 22px #123b7020;
+}
+
+.year-icon {
+  font-size: 35px;
+  margin-bottom: 8px;
+}
+
+.year-card h3 {
+  color: #123b70;
+  font-size: 19px;
+}
+
+.year-card p {
+  color: #64748b;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.trade-section {
+  display: none;
+  margin-top: 35px;
+}
+
+.trade-card {
+  background: white;
+  border-radius: 18px;
+  padding: 25px;
+  border: 1px solid #e0e7f0;
+  box-shadow: 0 5px 18px #123b7010;
+  text-align: center;
+}
+
+.trade-icon {
+  font-size: 43px;
+}
+
+.trade-card h2 {
+  color: #123b70;
+  margin: 8px 0;
+}
+
+.trade-card p {
+  color: #64748b;
+  margin-bottom: 15px;
+}
+
+.open-button {
+  display: inline-block;
+  background: #1766b1;
+  color: white;
+  padding: 12px 25px;
+  border: none;
   border-radius: 9px;
   font-weight: bold;
   cursor: pointer;
+  text-decoration: none;
 }
 
-.card {
-  background: white;
-  padding: 18px;
-  margin: 14px 0;
-  border-radius: 12px;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.04);
+.open-button:hover {
+  background: #123b70;
 }
 
-.card h3 {
-  color: #123b70;
-  font-size: 18px;
-  margin: 0 0 13px;
-}
-
-.answer-label {
-  color: #1976d2;
+.back-button {
+  display: block;
+  margin: 18px auto 0;
+  border: none;
+  background: transparent;
+  color: #1766b1;
   font-weight: bold;
-  margin-bottom: 6px;
+  cursor: pointer;
+  padding: 8px;
 }
 
-.answer {
-  line-height: 1.7;
-  font-size: 15px;
-  margin: 0;
-}
-
-#message {
+.info {
+  margin-top: 35px;
+  background: #eaf2ff;
+  padding: 25px;
+  border-radius: 15px;
   text-align: center;
-  color: #64748b;
-  font-size: 14px;
+}
+
+.info h3 {
+  color: #123b70;
+  margin-bottom: 8px;
+}
+
+.info p {
+  color: #52647b;
 }
 
 footer {
-  background: #123b70;
+  background: #102b50;
   color: white;
   text-align: center;
-  padding: 20px 10px;
-  margin-top: 30px;
+  padding: 28px 15px;
+  margin-top: 25px;
 }
 
 footer p {
-  margin: 5px;
+  color: #d6e5f8;
+  font-size: 13px;
+  margin-top: 6px;
 }
 
-@media(max-width: 400px) {
-  .languages {
-    gap: 5px;
+@media(max-width:500px) {
+  header {
+    justify-content: center;
   }
 
-  .languages button {
-    font-size: 13px;
-    padding: 11px 4px;
+  .logo {
+    width: 100%;
+    text-align: center;
   }
 
-  .search-box button {
-    padding: 11px;
-    font-size: 13px;
+  .year-grid {
+    gap: 12px;
+  }
+
+  .year-card {
+    padding: 20px 8px;
+  }
+
+  .hero {
+    padding: 50px 17px;
   }
 }
 </style>
@@ -180,231 +253,196 @@ footer p {
 <body>
 
 <header>
-  <h1>MY ITI STUDY</h1>
-  <p>Electrician Trade - First Year</p>
-</header>
-
-<main>
-
-  <div class="heading">
-    <h2 id="pageTitle">FIRST YEAR QUESTIONS & ANSWERS</h2>
-    <p id="subtitle">Select your language and study electrical questions.</p>
-  </div>
+  <div class="logo">⚡ MY ITI STUDY</div>
 
   <div class="languages">
     <button class="active" id="enBtn" onclick="changeLanguage('en')">English</button>
     <button id="teBtn" onclick="changeLanguage('te')">తెలుగు</button>
-    <button id="hiBtn" onclick="changeLanguage('hi')">हिंदी</button>
+    <button id="hiBtn" onclick="changeLanguage('hi')">हिन्दी</button>
   </div>
+</header>
 
-  <div class="search-box">
-    <input id="searchInput" type="text"
-      placeholder="Search Voltage, Current, DC...">
-    <button onclick="searchQuestions()" id="searchBtn">SEARCH</button>
-  </div>
+<section class="hero">
+  <h1 data-en="Welcome to MY ITI STUDY"
+      data-te="MY ITI STUDY కి స్వాగతం"
+      data-hi="MY ITI STUDY में आपका स्वागत है">
+    Welcome to MY ITI STUDY
+  </h1>
 
-  <p id="message"></p>
+  <p data-en="Learn important questions and answers. Improve your ITI knowledge step by step."
+     data-te="ముఖ్యమైన ప్రశ్నలు మరియు సమాధానాలను నేర్చుకోండి. మీ ITI పరిజ్ఞానాన్ని పెంచుకోండి."
+     data-hi="महत्वपूर्ण प्रश्न और उत्तर सीखें। धीरे-धीरे अपना ITI ज्ञान बढ़ाएँ।">
+    Learn important questions and answers. Improve your ITI knowledge step by step.
+  </p>
+</section>
 
-  <div id="questions"></div>
+<main class="container">
+
+  <section id="yearSection">
+    <div class="heading">
+      <h2 data-en="Choose Your Year"
+          data-te="మీ సంవత్సరాన్ని ఎంచుకోండి"
+          data-hi="अपना वर्ष चुनें">
+        Choose Your Year
+      </h2>
+
+      <p data-en="Select your ITI study year"
+         data-te="మీ ITI చదువు సంవత్సరాన్ని ఎంచుకోండి"
+         data-hi="अपना ITI पढ़ाई का वर्ष चुनें">
+        Select your ITI study year
+      </p>
+    </div>
+
+    <div class="year-grid">
+
+      <div class="year-card" onclick="selectYear('first')">
+        <div class="year-icon">📘</div>
+        <h3 data-en="FIRST YEAR"
+            data-te="మొదటి సంవత్సరం"
+            data-hi="पहला वर्ष">FIRST YEAR</h3>
+        <p data-en="First Year Electrician"
+           data-te="మొదటి సంవత్సరం ఎలక్ట్రీషియన్"
+           data-hi="पहले वर्ष का इलेक्ट्रीशियन">
+          First Year Electrician
+        </p>
+      </div>
+
+      <div class="year-card" onclick="selectYear('second')">
+        <div class="year-icon">📚</div>
+        <h3 data-en="SECOND YEAR"
+            data-te="రెండవ సంవత్సరం"
+            data-hi="दूसरा वर्ष">SECOND YEAR</h3>
+        <p data-en="Second Year Electrician"
+           data-te="రెండవ సంవత్సరం ఎలక్ట్రీషియన్"
+           data-hi="दूसरे वर्ष का इलेक्ट्रीషియన్">
+          Second Year Electrician
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="trade-section" id="tradeSection">
+    <div class="heading">
+      <h2 id="selectedYear">FIRST YEAR</h2>
+      <p data-en="Select Your Trade"
+         data-te="మీ ట్రేడ్‌ను ఎంచుకోండి"
+         data-hi="अपना ट्रेड चुनें">
+        Select Your Trade
+      </p>
+    </div>
+
+    <div class="trade-card">
+      <div class="trade-icon">⚡</div>
+      <h2>ELECTRICIAN</h2>
+
+      <p data-en="Important Electrician Questions & Answers"
+         data-te="ముఖ్యమైన ఎలక్ట్రీషియన్ ప్రశ్నలు మరియు సమాధానాలు"
+         data-hi="महत्वपूर्ण इलेक्ट्रीशियन प्रश्न और उत्तर">
+        Important Electrician Questions & Answers
+      </p>
+
+      <a href="first-year.html" class="open-button" id="tradeLink"
+         data-en="Open Questions →"
+         data-te="ప్రశ్నలను తెరవండి →"
+         data-hi="प्रश्न खोलें →">
+        Open Questions →
+      </a>
+    </div>
+
+    <button class="back-button" onclick="goBack()"
+      data-en="← Back to Year Selection"
+      data-te="← సంవత్సర ఎంపికకు తిరిగి వెళ్లండి"
+      data-hi="← वर्ष चुनने वापस जाएँ">
+      ← Back to Year Selection
+    </button>
+  </section>
+
+  <section class="info">
+    <h3 data-en="Learn • Practice • Improve"
+        data-te="నేర్చుకోండి • సాధన చేయండి • అభివృద్ధి చెందండి"
+        data-hi="सीखें • अभ्यास करें • आगे बढ़ें">
+      Learn • Practice • Improve
+    </h3>
+
+    <p data-en="Simple learning for ITI Electrician students."
+       data-te="ITI ఎలక్ట్రీషియన్ విద్యార్థుల కోసం సులభమైన అభ్యాసం."
+       data-hi="ITI इलेक्ट्रीशियन छात्रों के लिए आसान पढ़ाई।">
+      Simple learning for ITI Electrician students.
+    </p>
+  </section>
 
 </main>
 
 <footer>
-  <p><b>MY ITI STUDY</b></p>
-  <p>Study • Learn • Improve</p>
+  <h3>⚡ MY ITI STUDY</h3>
+  <p>Learn • Practice • Improve</p>
+  <p>© 2026 MY ITI STUDY</p>
 </footer>
 
 <script>
-const questions = [
-{
- enQ:"What is Electricity?",
- enA:"Electricity is a form of energy associated with electric charges.",
- teQ:"విద్యుత్ అంటే ఏమిటి?",
- teA:"విద్యుత్ అనేది విద్యుత్ ఆవేశాలకు సంబంధించిన శక్తి రూపం.",
- hiQ:"बिजली क्या है?",
- hiA:"बिजली विद्युत आवेशों से संबंधित ऊर्जा का एक रूप है।"
-},
-{
- enQ:"What is Voltage?",
- enA:"Voltage is the electrical potential difference between two points.",
- teQ:"వోల్టేజ్ అంటే ఏమిటి?",
- teA:"రెండు బిందువుల మధ్య విద్యుత్ పొటెన్షియల్ తేడాను వోల్టేజ్ అంటారు.",
- hiQ:"वोल्टेज क्या है?",
- hiA:"दो बिंदुओं के बीच विद्युत विभव के अंतर को वोल्टेज कहते हैं।"
-},
-{
- enQ:"What is Electric Current?",
- enA:"Electric current is the rate of flow of electric charge.",
- teQ:"విద్యుత్ ప్రవాహం అంటే ఏమిటి?",
- teA:"విద్యుత్ ఆవేశం ప్రవహించే రేటును విద్యుత్ ప్రవాహం అంటారు.",
- hiQ:"विद्युत धारा क्या है?",
- hiA:"विद्युत आवेश के प्रवाह की दर को विद्युत धारा कहते हैं।"
-},
-{
- enQ:"What is Resistance?",
- enA:"Resistance is the opposition offered to the flow of electric current.",
- teQ:"రెసిస్టెన్స్ అంటే ఏమిటి?",
- teA:"విద్యుత్ ప్రవాహానికి కలిగే ఆటంకాన్ని రెసిస్టెన్స్ అంటారు.",
- hiQ:"प्रतिरोध क्या है?",
- hiA:"विद्युत धारा के प्रवाह में होने वाली रुकावट को प्रतिरोध कहते हैं।"
-},
-{
- enQ:"What is Ohm's Law?",
- enA:"At constant temperature, current is directly proportional to voltage. Formula: V = I × R.",
- teQ:"ఓమ్ నియమం అంటే ఏమిటి?",
- teA:"స్థిరమైన ఉష్ణోగ్రత వద్ద విద్యుత్ ప్రవాహం వోల్టేజ్‌కు అనులోమానుపాతంలో ఉంటుంది. సూత్రం: V = I × R.",
- hiQ:"ओम का नियम क्या है?",
- hiA:"स्थिर तापमान पर धारा, वोल्टेज के समानुपाती होती है। सूत्र: V = I × R."
-},
-{
- enQ:"What is a Conductor?",
- enA:"A conductor is a material that allows electric current to flow through it easily.",
- teQ:"వాహకం అంటే ఏమిటి?",
- teA:"విద్యుత్ ప్రవాహం సులభంగా వెళ్లడానికి అనుమతించే పదార్థాన్ని వాహకం అంటారు.",
- hiQ:"चालक क्या है?",
- hiA:"जो पदार्थ विद्युत धारा को आसानी से प्रवाहित होने देता है, उसे चालक कहते हैं।"
-},
-{
- enQ:"What is an Insulator?",
- enA:"An insulator is a material that strongly opposes the flow of electric current.",
- teQ:"ఇన్సులేటర్ అంటే ఏమిటి?",
- teA:"విద్యుత్ ప్రవాహాన్ని అడ్డుకునే పదార్థాన్ని ఇన్సులేటర్ అంటారు.",
- hiQ:"कुचालक क्या है?",
- hiA:"जो पदार्थ विद्युत धारा के प्रवाह का बहुत अधिक विरोध करता है, उसे कुचालक कहते हैं।"
-},
-{
- enQ:"What is Direct Current (DC)?",
- enA:"Direct current flows in one direction.",
- teQ:"డైరెక్ట్ కరెంట్ (DC) అంటే ఏమిటి?",
- teA:"ఒకే దిశలో ప్రవహించే విద్యుత్ ప్రవాహాన్ని DC అంటారు.",
- hiQ:"दिष्ट धारा (DC) क्या है?",
- hiA:"जो विद्युत धारा एक ही दिशा में बहती है, उसे DC कहते हैं।"
-},
-{
- enQ:"What is Alternating Current (AC)?",
- enA:"Alternating current changes its direction periodically.",
- teQ:"ఆల్టర్నేటింగ్ కరెంట్ (AC) అంటే ఏమిటి?",
- teA:"సమయానుసారం తన దిశను మార్చుకునే విద్యుత్ ప్రవాహాన్ని AC అంటారు.",
- hiQ:"प्रत्यावर्ती धारा (AC) क्या है?",
- hiA:"जो विद्युत धारा समय-समय पर अपनी दिशा बदलती है, उसे AC कहते हैं।"
-},
-{
- enQ:"What is Electrical Power?",
- enA:"Electrical power is the rate at which electrical energy is transferred or used.",
- teQ:"విద్యుత్ శక్తి అంటే ఏమిటి?",
- teA:"విద్యుత్ శక్తి అనేది విద్యుత్ శక్తి బదిలీ లేదా వినియోగం జరిగే రేటు.",
- hiQ:"विद्युत शक्ति क्या है?",
- hiA:"विद्युत ऊर्जा के उपयोग या स्थानांतरण की दर को विद्युत शक्ति कहते हैं।"
-}
-];
-
 let currentLanguage = "en";
 
-const labels = {
- en: {
-  title:"FIRST YEAR QUESTIONS & ANSWERS",
-  subtitle:"Search your electrical questions below.",
-  search:"Search Voltage, Current, DC...",
-  button:"SEARCH",
-  answer:"Answer:",
-  showing:"Showing all questions.",
-  notFound:"Question not found. Try another word.",
-  result:"result(s) found."
- },
- te: {
-  title:"మొదటి సంవత్సరం ప్రశ్నలు & సమాధానాలు",
-  subtitle:"మీ విద్యుత్ ప్రశ్నలను ఇక్కడ వెతకండి.",
-  search:"వోల్టేజ్, కరెంట్, DC వెతకండి...",
-  button:"వెతకండి",
-  answer:"సమాధానం:",
-  showing:"అన్ని ప్రశ్నలు చూపబడుతున్నాయి.",
-  notFound:"ప్రశ్న కనబడలేదు. మరో పదాన్ని ప్రయత్నించండి.",
-  result:"ఫలితాలు కనుగొనబడ్డాయి."
- },
- hi: {
-  title:"प्रथम वर्ष के प्रश्न और उत्तर",
-  subtitle:"अपने विद्युत से जुड़े सवाल यहाँ खोजें।",
-  search:"वोल्टेज, करंट, DC खोजें...",
-  button:"खोजें",
-  answer:"उत्तर:",
-  showing:"सभी प्रश्न दिखाए जा रहे हैं।",
-  notFound:"सवाल नहीं मिला। दूसरा शब्द खोजें।",
-  result:"परिणाम मिले।"
- }
-};
+function changeLanguage(language) {
+  currentLanguage = language;
+  document.documentElement.lang = language;
 
-function changeLanguage(lang) {
- currentLanguage = lang;
+  document.querySelectorAll("[data-en]").forEach(function(element) {
+    element.textContent = element.getAttribute("data-" + language);
+  });
 
- document.getElementById("enBtn").classList.toggle("active",lang==="en");
- document.getElementById("teBtn").classList.toggle("active",lang==="te");
- document.getElementById("hiBtn").classList.toggle("active",lang==="hi");
+  document.getElementById("enBtn").classList.toggle("active", language === "en");
+  document.getElementById("teBtn").classList.toggle("active", language === "te");
+  document.getElementById("hiBtn").classList.toggle("active", language === "hi");
 
- const t = labels[lang];
-
- document.getElementById("pageTitle").textContent = t.title;
- document.getElementById("subtitle").textContent = t.subtitle;
- document.getElementById("searchInput").placeholder = t.search;
- document.getElementById("searchBtn").textContent = t.button;
-
- document.documentElement.lang = lang==="te" ? "te" : lang;
- searchQuestions();
+  try {
+    localStorage.setItem("myItiLanguage", language);
+  } catch(error) {}
 }
 
-function renderQuestions() {
- const container = document.getElementById("questions");
- const t = labels[currentLanguage];
+function selectYear(year) {
+  document.getElementById("yearSection").style.display = "none";
+  document.getElementById("tradeSection").style.display = "block";
 
- container.innerHTML = "";
+  let title = "";
+  let link = "";
 
- questions.forEach((q,index) => {
-  const card = document.createElement("div");
-  card.className = "card";
-  card.dataset.search = Object.values(q).join(" ").toLowerCase();
+  if (year === "first") {
+    title = currentLanguage === "te" ? "మొదటి సంవత్సరం" :
+            currentLanguage === "hi" ? "पहला वर्ष" : "FIRST YEAR";
+    link = "first-year.html";
+  } else {
+    title = currentLanguage === "te" ? "రెండవ సంవత్సరం" :
+            currentLanguage === "hi" ? "दूसरा वर्ष" : "SECOND YEAR";
+    link = "second-year.html";
+  }
 
-  const question = document.createElement("h3");
-  question.textContent = (index+1) + ". " + q[currentLanguage+"Q"];
-
-  const label = document.createElement("p");
-  label.className = "answer-label";
-  label.textContent = t.answer;
-
-  const answer = document.createElement("p");
-  answer.className = "answer";
-  answer.textContent = q[currentLanguage+"A"];
-
-  card.append(question,label,answer);
-  container.appendChild(card);
- });
+  document.getElementById("selectedYear").textContent = title;
+  document.getElementById("tradeLink").href = link;
+  window.scrollTo({top: 0, behavior: "smooth"});
 }
 
-function searchQuestions() {
- const query = document.getElementById("searchInput").value.trim().toLowerCase();
- const cards = document.querySelectorAll("#questions .card");
- const t = labels[currentLanguage];
- let found = 0;
-
- cards.forEach(card => {
-  const match = card.dataset.search.includes(query);
-  card.style.display = (!query || match) ? "block" : "none";
-  if (!query || match) found++;
- });
-
- const message = document.getElementById("message");
-
- if (!query) {
-  message.textContent = t.showing;
- } else if (found === 0) {
-  message.textContent = t.notFound;
- } else {
-  message.textContent = found + " " + t.result;
- }
+function goBack() {
+  document.getElementById("yearSection").style.display = "block";
+  document.getElementById("tradeSection").style.display = "none";
+  window.scrollTo({top: 0, behavior: "smooth"});
 }
 
-document.getElementById("searchInput").addEventListener("input",searchQuestions);
+try {
+  const savedLanguage = localStorage.getItem("myItiLanguage");
+  if (["en", "te", "hi"].includes(savedLanguage)) {
+    changeLanguage(savedLanguage);
+  }
+} catch(error) {}
 
-renderQuestions();
-changeLanguage("en");
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function() {
+    navigator.serviceWorker.register("service-worker.js")
+      .catch(function(error) {
+        console.log("Service worker error:", error);
+      });
+  });
+}
 </script>
 
 </body>
