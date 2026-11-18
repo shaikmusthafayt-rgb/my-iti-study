@@ -4,88 +4,224 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#123b70">
 <title>MY ITI STUDY - First Year</title>
+
 <style>
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #f1f5f9;
-  color: #222;
+  background: #f1f5fa;
+  color: #243247;
+  line-height: 1.6;
 }
+
 header {
-  background: #123b70;
+  background: linear-gradient(135deg, #102b50, #1766b1);
   color: white;
   text-align: center;
-  padding: 22px 12px;
+  padding: 25px 15px;
 }
+
+header h1 {
+  margin: 0;
+  font-size: 27px;
+}
+
+header p {
+  margin: 5px 0 0;
+  color: #e0edff;
+}
+
 main {
-  max-width: 800px;
+  max-width: 850px;
   margin: auto;
-  padding: 15px;
+  padding: 20px 15px;
 }
-h2 { color: #123b70; }
+
+.top-link {
+  display: inline-block;
+  color: #1766b1;
+  text-decoration: none;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+h2 {
+  color: #123b70;
+  margin-bottom: 5px;
+}
+
+.intro {
+  color: #64748b;
+  margin-top: 5px;
+}
+
+.language-box {
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  margin: 18px 0;
+  border: 1px solid #e0e7f0;
+}
+
+.language-box p {
+  margin: 0 0 10px;
+  font-weight: bold;
+}
+
+.language-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.language-buttons button {
+  border: 1px solid #1766b1;
+  background: white;
+  color: #1766b1;
+  padding: 9px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.language-buttons button.active {
+  background: #1766b1;
+  color: white;
+}
+
 .search-box {
   display: flex;
   gap: 8px;
   margin: 18px 0;
 }
-input {
-  min-width: 0;
+
+.search-box input {
   flex: 1;
+  min-width: 0;
   padding: 13px;
-  border: 1px solid #aaa;
+  border: 1px solid #cbd5e1;
   border-radius: 8px;
-  font-size: 16px;
-}
-button {
-  background: #123b70;
-  color: white;
-  border: 0;
-  border-radius: 8px;
-  padding: 12px 16px;
   font-size: 15px;
 }
+
+.search-box button {
+  background: #123b70;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 16px;
+  cursor: pointer;
+}
+
 .card {
   background: white;
-  padding: 16px;
-  margin: 12px 0;
-  border-radius: 10px;
-  border: 1px solid #ddd;
+  padding: 18px;
+  margin: 15px 0;
+  border-radius: 12px;
+  border: 1px solid #e0e7f0;
+  box-shadow: 0 3px 12px #123b700c;
 }
-.card h3 { color: #174b82; }
-.hindi {
-  background: #f5f7fa;
+
+.card h3 {
+  color: #123b70;
+  margin-top: 0;
+}
+
+.answer {
   padding: 10px;
-  border-radius: 6px;
-  line-height: 1.6;
+  margin-top: 10px;
+  border-radius: 8px;
+  background: #f3f7fc;
 }
+
+.answer strong {
+  color: #123b70;
+}
+
+.answer p {
+  margin: 4px 0 0;
+}
+
 #message {
   color: #b3261e;
   font-weight: bold;
 }
+
+.back-home {
+  display: inline-block;
+  margin-top: 15px;
+  background: #123b70;
+  color: white;
+  text-decoration: none;
+  padding: 11px 18px;
+  border-radius: 8px;
+}
+
 footer {
+  background: #102b50;
+  color: white;
   text-align: center;
-  padding: 20px;
-  color: #555;
+  padding: 22px 10px;
+  margin-top: 30px;
+}
+
+@media(max-width: 500px) {
+  header h1 {
+    font-size: 23px;
+  }
+
+  .card {
+    padding: 14px;
+  }
+
+  .search-box button {
+    padding: 11px;
+  }
 }
 </style>
 </head>
+
 <body>
 
 <header>
-<h1>MY ITI STUDY</h1>
-<p>Electrician Trade - First Year</p>
+  <h1>⚡ MY ITI STUDY</h1>
+  <p>Electrician Trade - First Year</p>
 </header>
 
 <main>
+
+<a class="top-link" href="index.html">← Back to Home</a>
+
 <h2>FIRST YEAR QUESTIONS & ANSWERS</h2>
-<p>Search your electrical questions below.</p>
+<p class="intro">
+  Learn important Electrician questions and answers.
+</p>
+
+<div class="language-box">
+  <p>Select Language / భాషను ఎంచుకోండి / भाषा चुनें</p>
+
+  <div class="language-buttons">
+    <button class="active" onclick="changeLanguage('all', this)">All Languages</button>
+    <button onclick="changeLanguage('en', this)">English</button>
+    <button onclick="changeLanguage('te', this)">తెలుగు</button>
+    <button onclick="changeLanguage('hi', this)">हिन्दी</button>
+  </div>
+</div>
 
 <div class="search-box">
-<input id="searchInput" type="text"
-placeholder="Search Voltage, Current, DC...">
-<button onclick="searchQuestions()">SEARCH</button>
+  <input
+    type="text"
+    id="searchInput"
+    placeholder="Search Voltage, Current, DC..."
+    oninput="searchQuestions()">
+  <button onclick="searchQuestions()">SEARCH</button>
 </div>
 
 <p id="message"></p>
@@ -94,101 +230,261 @@ placeholder="Search Voltage, Current, DC...">
 
 <div class="card">
 <h3>1. What is Electricity?</h3>
-<p><b>Answer:</b> Electricity is a form of energy associated with electric charges.</p>
-<p class="hindi"><b>हिंदी:</b> बिजली विद्युत आवेशों से संबंधित ऊर्जा का एक रूप है।</p>
+
+<div class="answer en">
+<strong>English Answer:</strong>
+<p>Electricity is a form of energy associated with electric charges.</p>
+</div>
+
+<div class="answer te">
+<strong>తెలుగు సమాధానం:</strong>
+<p>విద్యుత్ ఆవేశాలకు సంబంధించిన శక్తి రూపాన్ని విద్యుత్ అంటారు.</p>
+</div>
+
+<div class="answer hi">
+<strong>हिंदी उत्तर:</strong>
+<p>बिजली विद्युत आवेशों से संबंधित ऊर्जा का एक रूप है।</p>
+</div>
 </div>
 
 <div class="card">
 <h3>2. What is Voltage?</h3>
-<p><b>Answer:</b> Voltage is the electrical potential difference between two points.</p>
-<p class="hindi"><b>हिंदी:</b> दो बिंदुओं के बीच विद्युत विभव के अंतर को वोल्टेज कहते हैं।</p>
+
+<div class="answer en">
+<strong>English Answer:</strong>
+<p>Voltage is the electrical potential difference between two points.</p>
+</div>
+
+<div class="answer te">
+<strong>తెలుగు సమాధానం:</strong>
+<p>రెండు బిందువుల మధ్య ఉండే విద్యుత్ పొటెన్షియల్ తేడాను వోల్టేజ్ అంటారు.</p>
+</div>
+
+<div class="answer hi">
+<strong>हिंदी उत्तर:</strong>
+<p>दो बिंदुओं के बीच विद्युत विभव के अंतर को वोल्टेज कहते हैं।</p>
+</div>
 </div>
 
 <div class="card">
 <h3>3. What is Electric Current?</h3>
-<p><b>Answer:</b> Electric current is the rate of flow of electric charge.</p>
-<p class="hindi"><b>हिंदी:</b> विद्युत आवेश के प्रवाह की दर को विद्युत धारा कहते हैं।</p>
+
+<div class="answer en">
+<strong>English Answer:</strong>
+<p>Electric current is the rate of flow of electric charge.</p>
+</div>
+
+<div class="answer te">
+<strong>తెలుగు సమాధానం:</strong>
+<p>విద్యుత్ ఆవేశం ప్రవహించే రేటును విద్యుత్ ప్రవాహం అంటారు.</p>
+</div>
+
+<div class="answer hi">
+<strong>हिंदी उत्तर:</strong>
+<p>विद्युत आवेश के प्रवाह की दर को विद्युत धारा कहते हैं।</p>
+</div>
 </div>
 
 <div class="card">
 <h3>4. What is Resistance?</h3>
-<p><b>Answer:</b> Resistance is the opposition offered to the flow of electric current.</p>
-<p class="hindi"><b>हिंदी:</b> विद्युत धारा के प्रवाह में होने वाली रुकावट को प्रतिरोध कहते हैं।</p>
+
+<div class="answer en">
+<strong>English Answer:</strong>
+<p>Resistance is the opposition offered to the flow of electric current.</p>
+</div>
+
+<div class="answer te">
+<strong>తెలుగు సమాధానం:</strong>
+<p>విద్యుత్ ప్రవాహాన్ని అడ్డుకునే లక్షణాన్ని నిరోధకత అంటారు.</p>
+</div>
+
+<div class="answer hi">
+<strong>हिंदी उत्तर:</strong>
+<p>विद्युत धारा के प्रवाह में होने वाली रुकावट को प्रतिरोध कहते हैं।</p>
+</div>
 </div>
 
 <div class="card">
 <h3>5. What is Ohm's Law?</h3>
-<p><b>Answer:</b> At constant temperature, current is directly proportional to voltage. Formula: V = I × R.</p>
-<p class="hindi"><b>हिंदी:</b> स्थिर तापमान पर धारा, वोल्टेज के समानुपाती होती है। सूत्र: V = I × R.</p>
+
+<div class="answer en">
+<strong>English Answer:</strong>
+<p>At constant temperature, current is directly proportional to voltage. Formula: V = I × R.</p>
+</div>
+
+<div class="answer te">
+<strong>తెలుగు సమాధానం:</strong>
+<p>ఉష్ణోగ్రత స్థిరంగా ఉన్నప్పుడు విద్యుత్ ప్రవాహం వోల్టేజ్‌కు అనులోమానుపాతంలో ఉంటుంది. సూత్రం: V = I × R.</p>
+</div>
+
+<div class="answer hi">
+<strong>हिंदी उत्तर:</strong>
+<p>स्थिर तापमान पर धारा, वोल्टेज के समानुपाती होती है। सूत्र: V = I × R.</p>
+</div>
 </div>
 
 <div class="card">
 <h3>6. What is a Conductor?</h3>
-<p><b>Answer:</b> A conductor is a material that allows electric current to flow through it easily.</p>
-<p class="hindi"><b>हिंदी:</b> जो पदार्थ विद्युत धारा को आसानी से प्रवाहित होने देता है, उसे चालक कहते हैं।</p>
+
+<div class="answer en">
+<strong>English Answer:</strong>
+<p>A conductor is a material that allows electric current to flow through it easily.</p>
+</div>
+
+<div class="answer te">
+<strong>తెలుగు సమాధానం:</strong>
+<p>విద్యుత్ ప్రవాహాన్ని సులభంగా అనుమతించే పదార్థాన్ని వాహకం అంటారు.</p>
+</div>
+
+<div class="answer hi">
+<strong>हिंदी उत्तर:</strong>
+<p>जो पदार्थ विद्युत धारा को आसानी से प्रवाहित होने देता है, उसे चालक कहते हैं।</p>
+</div>
 </div>
 
 <div class="card">
 <h3>7. What is an Insulator?</h3>
-<p><b>Answer:</b> An insulator is a material that strongly opposes the flow of electric current.</p>
-<p class="hindi"><b>हिंदी:</b> जो पदार्थ विद्युत धारा के प्रवाह का बहुत अधिक विरोध करता है, उसे कुचालक कहते हैं।</p>
+
+<div class="answer en">
+<strong>English Answer:</strong>
+<p>An insulator is a material that strongly opposes the flow of electric current.</p>
+</div>
+
+<div class="answer te">
+<strong>తెలుగు సమాధానం:</strong>
+<p>విద్యుత్ ప్రవాహాన్ని అడ్డుకునే పదార్థాన్ని అవాహకం అంటారు.</p>
+</div>
+
+<div class="answer hi">
+<strong>हिंदी उत्तर:</strong>
+<p>जो पदार्थ विद्युत धारा के प्रवाह का बहुत अधिक विरोध करता है, उसे कुचालक कहते हैं।</p>
+</div>
 </div>
 
 <div class="card">
 <h3>8. What is Direct Current (DC)?</h3>
-<p><b>Answer:</b> Direct current flows in one direction.</p>
-<p class="hindi"><b>हिंदी:</b> जो विद्युत धारा एक ही दिशा में बहती है, उसे DC कहते हैं।</p>
+
+<div class="answer en">
+<strong>English Answer:</strong>
+<p>Direct current flows in one direction.</p>
+</div>
+
+<div class="answer te">
+<strong>తెలుగు సమాధానం:</strong>
+<p>ఒకే దిశలో ప్రవహించే విద్యుత్ ప్రవాహాన్ని డైరెక్ట్ కరెంట్ (DC) అంటారు.</p>
+</div>
+
+<div class="answer hi">
+<strong>हिंदी उत्तर:</strong>
+<p>जो विद्युत धारा एक ही दिशा में बहती है, उसे DC कहते हैं।</p>
+</div>
 </div>
 
 <div class="card">
 <h3>9. What is Alternating Current (AC)?</h3>
-<p><b>Answer:</b> Alternating current changes its direction periodically.</p>
-<p class="hindi"><b>हिंदी:</b> जो विद्युत धारा समय-समय पर अपनी दिशा बदलती है, उसे AC कहते हैं।</p>
+
+<div class="answer en">
+<strong>English Answer:</strong>
+<p>Alternating current changes its direction periodically.</p>
+</div>
+
+<div class="answer te">
+<strong>తెలుగు సమాధానం:</strong>
+<p>సమయానుసారం తన దిశను మార్చుకునే విద్యుత్ ప్రవాహాన్ని ఆల్టర్నేటింగ్ కరెంట్ (AC) అంటారు.</p>
+</div>
+
+<div class="answer hi">
+<strong>हिंदी उत्तर:</strong>
+<p>जो विद्युत धारा समय-समय पर अपनी दिशा बदलती है, उसे AC कहते हैं।</p>
+</div>
 </div>
 
 <div class="card">
 <h3>10. What is Electrical Power?</h3>
-<p><b>Answer:</b> Electrical power is the rate at which electrical energy is transferred or used.</p>
-<p class="hindi"><b>हिंदी:</b> विद्युत ऊर्जा के उपयोग या स्थानांतरण की दर को विद्युत शक्ति कहते हैं।</p>
+
+<div class="answer en">
+<strong>English Answer:</strong>
+<p>Electrical power is the rate at which electrical energy is transferred or used.</p>
+</div>
+
+<div class="answer te">
+<strong>తెలుగు సమాధానం:</strong>
+<p>విద్యుత్ శక్తి వినియోగం లేదా బదిలీ జరిగే రేటును విద్యుత్ పవర్ అంటారు.</p>
+</div>
+
+<div class="answer hi">
+<strong>हिंदी उत्तर:</strong>
+<p>विद्युत ऊर्जा के उपयोग या स्थानांतरण की दर को विद्युत शक्ति कहते हैं।</p>
+</div>
 </div>
 
 </div>
+
+<a href="index.html" class="back-home">← Back to Home</a>
+
 </main>
 
 <footer>
-<p>MY ITI STUDY</p>
-<p>Study • Learn • Improve</p>
+  <h3>⚡ MY ITI STUDY</h3>
+  <p>Learn • Practice • Improve</p>
+  <p>© 2026 MY ITI STUDY</p>
 </footer>
 
 <script>
+let selectedLanguage = "all";
+
+function changeLanguage(language, button) {
+  selectedLanguage = language;
+
+  document.querySelectorAll(".language-buttons button").forEach(function(btn) {
+    btn.classList.remove("active");
+  });
+
+  button.classList.add("active");
+
+  document.querySelectorAll(".answer").forEach(function(answer) {
+    if (language === "all") {
+      answer.style.display = "block";
+    } else {
+      answer.style.display = answer.classList.contains(language)
+        ? "block"
+        : "none";
+    }
+  });
+
+  searchQuestions();
+}
+
 function searchQuestions() {
-  const input = document.getElementById("searchInput");
-  const query = input.value.trim().toLowerCase();
+  const query = document.getElementById("searchInput").value
+    .trim()
+    .toLowerCase();
+
   const cards = document.querySelectorAll("#questions .card");
   const message = document.getElementById("message");
   let found = 0;
 
   cards.forEach(function(card) {
-    const text = card.innerText.toLowerCase();
-    const match = text.includes(query);
-    card.style.display = (!query || match) ? "block" : "none";
-    if (!query || match) found++;
+    const match = card.innerText.toLowerCase().includes(query);
+    card.style.display = match ? "block" : "none";
+
+    if (match) found++;
   });
 
-  if (!query) {
+  if (query === "") {
     message.textContent = "Showing all questions.";
   } else if (found === 0) {
     message.textContent = "Question not found. Try another word.";
   } else {
-    message.textContent = found + " result(s) found.";
+    message.textContent = found + " question(s) found.";
   }
 }
 
-document.getElementById("searchInput").addEventListener("keydown", function(event) {
-  if (event.key === "Enter") searchQuestions();
-});
+changeLanguage(
+  "all",
+  document.querySelector(".language-buttons button")
+);
 </script>
 
 </body>
-  </html>
-  
+</html>
