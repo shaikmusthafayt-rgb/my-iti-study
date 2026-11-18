@@ -2,436 +2,459 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#123b70">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#102b50">
 
-  <title>MY ITI STUDY | Learn • Practice • Improve</title>
+<title>MY ITI STUDY</title>
+<meta name="description" content="Learn important ITI Electrician questions and answers in English, Telugu and Hindi.">
 
-  <meta name="description" content="MY ITI STUDY - Learn ITI Electrician subjects, practice questions and improve your knowledge.">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png">
 
-  <link rel="manifest" href="manifest.json">
-  <link rel="icon" href="icon-192.png">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+body {
+  font-family: Arial, sans-serif;
+  background: #f3f6fb;
+  color: #17243a;
+  line-height: 1.6;
+}
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #f3f6fc;
-      color: #17243a;
-      line-height: 1.6;
-    }
+header {
+  background: #ffffff;
+  padding: 17px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  box-shadow: 0 3px 15px #00000012;
+}
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+.logo {
+  font-size: 21px;
+  font-weight: 800;
+  color: #123b70;
+}
 
-    .navbar {
-      background: #ffffff;
-      padding: 15px 6%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-    }
+.languages {
+  display: flex;
+  gap: 6px;
+}
 
-    .brand {
-      color: #123b70;
-      font-size: 21px;
-      font-weight: 800;
-      letter-spacing: 0.5px;
-    }
+.languages button {
+  border: 1px solid #123b70;
+  background: white;
+  color: #123b70;
+  padding: 8px 11px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
 
-    .language {
-      display: flex;
-      gap: 8px;
-    }
+.languages button.active {
+  background: #123b70;
+  color: white;
+}
 
-    .language button {
-      border: 1px solid #123b70;
-      background: white;
-      color: #123b70;
-      padding: 8px 13px;
-      border-radius: 20px;
-      font-weight: bold;
-      cursor: pointer;
-    }
+.hero {
+  background: linear-gradient(135deg,#102b50,#1766b1);
+  color: white;
+  text-align: center;
+  padding: 65px 20px;
+}
 
-    .language button.active {
-      background: #123b70;
-      color: white;
-    }
+.hero h1 {
+  font-size: clamp(30px,6vw,48px);
+  margin-bottom: 12px;
+}
 
-    .hero {
-      background: linear-gradient(135deg, #102d55, #1766b1);
-      color: white;
-      padding: 75px 20px;
-      text-align: center;
-    }
+.hero p {
+  color: #e0edff;
+  max-width: 650px;
+  margin: auto;
+  font-size: 16px;
+}
 
-    .hero-content {
-      max-width: 850px;
-      margin: auto;
-    }
+.container {
+  max-width: 1050px;
+  margin: auto;
+  padding: 38px 18px;
+}
 
-    .hero-tag {
-      display: inline-block;
-      background: rgba(255,255,255,0.15);
-      padding: 7px 17px;
-      border-radius: 30px;
-      font-size: 13px;
-      margin-bottom: 20px;
-    }
+.heading {
+  text-align: center;
+  margin-bottom: 25px;
+}
 
-    .hero h1 {
-      font-size: clamp(34px, 7vw, 58px);
-      line-height: 1.15;
-      margin-bottom: 18px;
-    }
+.heading h2 {
+  color: #123b70;
+  font-size: 27px;
+}
 
-    .hero p {
-      max-width: 650px;
-      margin: 0 auto 28px;
-      color: #e5efff;
-      font-size: 17px;
-    }
+.heading p {
+  color: #64748b;
+  margin-top: 5px;
+}
 
-    .hero-button {
-      display: inline-block;
-      background: #ffffff;
-      color: #123b70;
-      padding: 13px 25px;
-      border-radius: 9px;
-      font-weight: bold;
-      transition: 0.2s;
-    }
+.year-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 18px;
+}
 
-    .hero-button:hover {
-      background: #e8f1ff;
-      transform: translateY(-2px);
-    }
+.year-card {
+  background: white;
+  padding: 25px 15px;
+  border-radius: 16px;
+  text-align: center;
+  border: 1px solid #e0e7f0;
+  box-shadow: 0 5px 18px #123b7010;
+  cursor: pointer;
+  transition: .2s;
+}
 
-    .section {
-      max-width: 1100px;
-      margin: auto;
-      padding: 55px 20px;
-    }
+.year-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 9px 22px #123b7020;
+}
 
-    .section-heading {
-      text-align: center;
-      margin-bottom: 30px;
-    }
+.year-icon {
+  font-size: 35px;
+  margin-bottom: 8px;
+}
 
-    .section-heading h2 {
-      color: #123b70;
-      font-size: 29px;
-      margin-bottom: 8px;
-    }
+.year-card h3 {
+  color: #123b70;
+  font-size: 19px;
+}
 
-    .section-heading p {
-      color: #64748b;
-    }
+.year-card p {
+  color: #64748b;
+  font-size: 13px;
+  margin-top: 5px;
+}
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 20px;
-    }
+.trade-section {
+  display: none;
+  margin-top: 35px;
+}
 
-    .card {
-      background: white;
-      padding: 27px 22px;
-      border-radius: 16px;
-      border: 1px solid #e5eaf2;
-      box-shadow: 0 5px 18px rgba(20,50,90,0.06);
-      transition: 0.2s;
-    }
+.trade-card {
+  background: white;
+  border-radius: 18px;
+  padding: 25px;
+  border: 1px solid #e0e7f0;
+  box-shadow: 0 5px 18px #123b7010;
+  text-align: center;
+}
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(20,50,90,0.12);
-    }
+.trade-icon {
+  font-size: 43px;
+}
 
-    .card-icon {
-      width: 55px;
-      height: 55px;
-      border-radius: 13px;
-      background: #eaf2ff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 27px;
-      margin-bottom: 17px;
-    }
+.trade-card h2 {
+  color: #123b70;
+  margin: 8px 0;
+}
 
-    .card h3 {
-      color: #123b70;
-      font-size: 21px;
-      margin-bottom: 9px;
-    }
+.trade-card p {
+  color: #64748b;
+  margin-bottom: 15px;
+}
 
-    .card p {
-      color: #64748b;
-      font-size: 14px;
-      margin-bottom: 18px;
-    }
+.open-button {
+  display: inline-block;
+  background: #1766b1;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 9px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+}
 
-    .card-link {
-      color: #1766b1;
-      font-weight: bold;
-      font-size: 14px;
-    }
+.open-button:hover {
+  background: #123b70;
+}
 
-    .coming {
-      display: inline-block;
-      background: #fff3d6;
-      color: #956000;
-      padding: 5px 10px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: bold;
-    }
+.back-button {
+  display: block;
+  margin: 18px auto 0;
+  border: none;
+  background: transparent;
+  color: #1766b1;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 8px;
+}
 
-    .about {
-      background: white;
-      border-radius: 18px;
-      padding: 32px 25px;
-      text-align: center;
-      border: 1px solid #e5eaf2;
-    }
+.info {
+  margin-top: 35px;
+  background: #eaf2ff;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+}
 
-    .about h2 {
-      color: #123b70;
-      margin-bottom: 12px;
-    }
+.info h3 {
+  color: #123b70;
+  margin-bottom: 8px;
+}
 
-    .about p {
-      color: #64748b;
-      max-width: 700px;
-      margin: auto;
-    }
+.info p {
+  color: #52647b;
+}
 
-    footer {
-      background: #102d55;
-      color: white;
-      text-align: center;
-      padding: 30px 15px;
-    }
+footer {
+  background: #102b50;
+  color: white;
+  text-align: center;
+  padding: 28px 15px;
+  margin-top: 25px;
+}
 
-    footer p {
-      color: #d6e5f8;
-      font-size: 14px;
-      margin: 5px;
-    }
+footer p {
+  color: #d6e5f8;
+  font-size: 13px;
+  margin-top: 6px;
+}
 
-    footer a {
-      color: #ffffff;
-      text-decoration: underline;
-    }
+@media(max-width:500px) {
+  header {
+    justify-content: center;
+  }
 
-    @media (max-width: 600px) {
-      .navbar {
-        padding: 13px 15px;
-      }
+  .logo {
+    width: 100%;
+    text-align: center;
+  }
 
-      .brand {
-        font-size: 18px;
-      }
+  .year-grid {
+    gap: 12px;
+  }
 
-      .hero {
-        padding: 58px 18px;
-      }
+  .year-card {
+    padding: 20px 8px;
+  }
 
-      .hero p {
-        font-size: 15px;
-      }
-
-      .section {
-        padding: 40px 16px;
-      }
-
-      .section-heading h2 {
-        font-size: 25px;
-      }
-    }
-  </style>
+  .hero {
+    padding: 50px 17px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <nav class="navbar">
-    <div class="brand">⚡ MY ITI STUDY</div>
+<header>
+  <div class="logo">⚡ MY ITI STUDY</div>
 
-    <div class="language">
-      <button id="englishBtn" class="active"
-        onclick="changeLanguage('en')" aria-pressed="true">
-        English
-      </button>
+  <div class="languages">
+    <button class="active" id="enBtn"
+      onclick="changeLanguage('en')">English</button>
+    <button id="teBtn"
+      onclick="changeLanguage('te')">తెలుగు</button>
+    <button id="hiBtn"
+      onclick="changeLanguage('hi')">हिन्दी</button>
+  </div>
+</header>
 
-      <button id="teluguBtn"
-        onclick="changeLanguage('te')" aria-pressed="false">
-        తెలుగు
-      </button>
+<section class="hero">
+  <h1 data-en="Welcome to MY ITI STUDY"
+      data-te="MY ITI STUDY కి స్వాగతం"
+      data-hi="MY ITI STUDY में आपका स्वागत है">
+    Welcome to MY ITI STUDY
+  </h1>
+
+  <p data-en="Learn important questions and answers. Improve your ITI knowledge step by step."
+     data-te="ముఖ్యమైన ప్రశ్నలు మరియు సమాధానాలను నేర్చుకోండి. మీ ITI పరిజ్ఞానాన్ని పెంచుకోండి."
+     data-hi="महत्वपूर्ण प्रश्न और उत्तर सीखें। धीरे-धीरे अपना ITI ज्ञान बढ़ाएँ।">
+    Learn important questions and answers. Improve your ITI knowledge step by step.
+  </p>
+</section>
+
+<main class="container">
+
+  <section id="yearSection">
+    <div class="heading">
+      <h2 data-en="Choose Your Year"
+          data-te="మీ సంవత్సరాన్ని ఎంచుకోండి"
+          data-hi="अपना वर्ष चुनें">
+        Choose Your Year
+      </h2>
+
+      <p data-en="Select your ITI study year"
+         data-te="మీ ITI చదువు సంవత్సరాన్ని ఎంచుకోండి"
+         data-hi="अपना ITI पढ़ाई का वर्ष चुनें">
+        Select your ITI study year
+      </p>
     </div>
-  </nav>
 
-  <header class="hero">
-    <div class="hero-content">
-      <span class="hero-tag" data-en="YOUR LEARNING PLATFORM"
-        data-te="మీ అభ్యాస వేదిక">
-        YOUR LEARNING PLATFORM
-      </span>
+    <div class="year-grid">
 
-      <h1 data-en="Welcome to MY ITI STUDY"
-        data-te="MY ITI STUDY కి స్వాగతం">
-        Welcome to MY ITI STUDY
-      </h1>
+      <div class="year-card" onclick="selectYear('first')">
+        <div class="year-icon">📘</div>
+        <h3 data-en="FIRST YEAR"
+            data-te="మొదటి సంవత్సరం"
+            data-hi="पहला वर्ष">FIRST YEAR</h3>
+        <p data-en="First Year Electrician"
+           data-te="మొదటి సంవత్సరం ఎలక్ట్రీషియన్"
+           data-hi="पहले वर्ष का इलेक्ट्रीशियन">
+          First Year Electrician
+        </p>
+      </div>
 
-      <p data-en="Learn better, practice more and build your future with simple ITI study materials."
-        data-te="సులభమైన ITI స్టడీ మెటీరియల్‌తో బాగా నేర్చుకోండి, ఎక్కువగా సాధన చేయండి మరియు మీ భవిష్యత్తును నిర్మించుకోండి.">
-        Learn better, practice more and build your future with simple ITI study materials.
+      <div class="year-card" onclick="selectYear('second')">
+        <div class="year-icon">📚</div>
+        <h3 data-en="SECOND YEAR"
+            data-te="రెండవ సంవత్సరం"
+            data-hi="दूसरा वर्ष">SECOND YEAR</h3>
+        <p data-en="Second Year Electrician"
+           data-te="రెండవ సంవత్సరం ఎలక్ట్రీషియన్"
+           data-hi="दूसरे वर्ष का इलेक्ट्रीशियन">
+          Second Year Electrician
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="trade-section" id="tradeSection">
+    <div class="heading">
+      <h2 id="selectedYear">FIRST YEAR</h2>
+      <p data-en="Select Your Trade"
+         data-te="మీ ట్రేడ్‌ను ఎంచుకోండి"
+         data-hi="अपना ट्रेड चुनें">
+        Select Your Trade
+      </p>
+    </div>
+
+    <div class="trade-card">
+      <div class="trade-icon">⚡</div>
+
+      <h2>ELECTRICIAN</h2>
+
+      <p data-en="Important Electrician Questions & Answers"
+         data-te="ముఖ్యమైన ఎలక్ట్రీషియన్ ప్రశ్నలు మరియు సమాధానాలు"
+         data-hi="महत्वपूर्ण इलेक्ट्रीशियन प्रश्न और उत्तर">
+        Important Electrician Questions & Answers
       </p>
 
-      <a href="#courses" class="hero-button"
-        data-en="Explore Courses →"
-        data-te="కోర్సులను చూడండి →">
-        Explore Courses →
+      <a href="first-year.html" class="open-button"
+         id="tradeLink"
+         data-en="Open Questions →"
+         data-te="ప్రశ్నలను తెరవండి →"
+         data-hi="प्रश्न खोलें →">
+        Open Questions →
       </a>
     </div>
-  </header>
 
-  <main>
+    <button class="back-button" onclick="goBack()"
+      data-en="← Back to Year Selection"
+      data-te="← సంవత్సర ఎంపికకు తిరిగి వెళ్లండి"
+      data-hi="← वर्ष चुनने वापस जाएँ">
+      ← Back to Year Selection
+    </button>
+  </section>
 
-    <section class="section" id="courses">
-      <div class="section-heading">
-        <h2 data-en="Explore Your Studies"
-          data-te="మీ చదువును ప్రారంభించండి">
-          Explore Your Studies
-        </h2>
+  <section class="info">
+    <h3 data-en="Learn • Practice • Improve"
+        data-te="నేర్చుకోండి • సాధన చేయండి • అభివృద్ధి చెందండి"
+        data-hi="सीखें • अभ्यास करें • आगे बढ़ें">
+      Learn • Practice • Improve
+    </h3>
 
-        <p data-en="Choose your year and start learning."
-          data-te="మీ సంవత్సరాన్ని ఎంచుకుని నేర్చుకోవడం ప్రారంభించండి.">
-          Choose your year and start learning.
-        </p>
-      </div>
-
-      <div class="cards">
-
-        <a href="first-year.html" class="card">
-          <div class="card-icon">📘</div>
-
-          <h3 data-en="FIRST YEAR"
-            data-te="మొదటి సంవత్సరం">
-            FIRST YEAR
-          </h3>
-
-          <p data-en="Electrician first year questions and answers. Learn the basics step by step."
-            data-te="ఎలక్ట్రీషియన్ మొదటి సంవత్సరం ప్రశ్నలు మరియు సమాధానాలు. ప్రాథమిక విషయాలను దశలవారీగా నేర్చుకోండి.">
-            Electrician first year questions and answers. Learn the basics step by step.
-          </p>
-
-          <span class="card-link"
-            data-en="Start Learning →"
-            data-te="నేర్చుకోవడం ప్రారంభించండి →">
-            Start Learning →
-          </span>
-        </a>
-
-        <div class="card">
-          <div class="card-icon">📚</div>
-
-          <h3 data-en="SECOND YEAR"
-            data-te="రెండవ సంవత్సరం">
-            SECOND YEAR
-          </h3>
-
-          <p data-en="Second year Electrician study materials and practice questions."
-            data-te="రెండవ సంవత్సరం ఎలక్ట్రీషియన్ స్టడీ మెటీరియల్ మరియు ప్రాక్టీస్ ప్రశ్నలు.">
-            Second year Electrician study materials and practice questions.
-          </p>
-
-          <span class="coming"
-            data-en="COMING SOON"
-            data-te="త్వరలో వస్తుంది">
-            COMING SOON
-          </span>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">⚡</div>
-
-          <h3 data-en="ELECTRICIAN TRADE"
-            data-te="ఎలక్ట్రీషియన్ ట్రేడ్">
-            ELECTRICIAN TRADE
-          </h3>
-
-          <p data-en="Build your electrical knowledge with simple explanations and important topics."
-            data-te="సులభమైన వివరణలు మరియు ముఖ్యమైన అంశాలతో మీ ఎలక్ట్రికల్ పరిజ్ఞానాన్ని పెంచుకోండి.">
-            Build your electrical knowledge with simple explanations and important topics.
-          </p>
-
-          <span class="coming"
-            data-en="MORE CONTENT SOON"
-            data-te="మరిన్ని విషయాలు త్వరలో">
-            MORE CONTENT SOON
-          </span>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="about">
-        <h2 data-en="Learn • Practice • Improve"
-          data-te="నేర్చుకోండి • సాధన చేయండి • అభివృద్ధి చెందండి">
-          Learn • Practice • Improve
-        </h2>
-
-        <p data-en="MY ITI STUDY is made to help ITI students understand their subjects and improve their knowledge one step at a time."
-          data-te="ITI విద్యార్థులు తమ పాఠ్యాంశాలను అర్థం చేసుకోవడానికి మరియు ఒక్కో అడుగుగా తమ జ్ఞానాన్ని పెంచుకోవడానికి MY ITI STUDY రూపొందించబడింది.">
-          MY ITI STUDY is made to help ITI students understand their subjects and improve their knowledge one step at a time.
-        </p>
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    <h3>⚡ MY ITI STUDY</h3>
-
-    <p data-en="Made for ITI Students"
-      data-te="ITI విద్యార్థుల కోసం రూపొందించబడింది">
-      Made for ITI Students
+    <p data-en="Simple learning for ITI Electrician students."
+       data-te="ITI ఎలక్ట్రీషియన్ విద్యార్థుల కోసం సులభమైన అభ్యాసం."
+       data-hi="ITI इलेक्ट्रीशियन छात्रों के लिए आसान पढ़ाई।">
+      Simple learning for ITI Electrician students.
     </p>
+  </section>
 
-    <p>Learn • Practice • Improve</p>
+</main>
 
-    <p>
-      <a href="https://www.instagram.com/_top_sigma_king_/"
-        target="_blank" rel="noopener noreferrer">
-        Instagram
-      </a>
-    </p>
+<footer>
+  <h3>⚡ MY ITI STUDY</h3>
+  <p>Learn • Practice • Improve</p>
+  <p>© 2026 MY ITI STUDY</p>
+</footer>
 
-    <p>© 2026 MY ITI STUDY</p>
-  </footer>
+<script>
+let currentLanguage = "en";
 
-  <script>
-    function changeLanguage(language) {
-      document.documentElement.lang = language;
+function changeLanguage(language) {
+  currentLanguage = language;
+  document.documentElement.lang = language;
 
-      document.querySelectorAll("[data-en]").forEach(function(element) {
-        element.textContent =
-          language === "te"
-            ? element.getAttribute("data-te")
+  document.querySelectorAll("[data-en]").forEach(function(element) {
+    element.textContent = element.getAttribute("data-" + language);
+  });
+
+  document.getElementById("enBtn").classList.toggle("active", language === "en");
+  document.getElementById("teBtn").classList.toggle("active", language === "te");
+  document.getElementById("hiBtn").classList.toggle("active", language === "hi");
+
+  try {
+    localStorage.setItem("myItiLanguage", language);
+  } catch(error) {}
+}
+
+function selectYear(year) {
+  document.getElementById("yearSection").style.display = "none";
+  document.getElementById("tradeSection").style.display = "block";
+
+  let title = "";
+  let link = "";
+
+  if (year === "first") {
+    title = currentLanguage === "te" ? "మొదటి సంవత్సరం" :
+            currentLanguage === "hi" ? "पहला वर्ष" : "FIRST YEAR";
+    link = "first-year.html";
+  } else {
+    title = currentLanguage === "te" ? "రెండవ సంవత్సరం" :
+            currentLanguage === "hi" ? "दूसरा वर्ष" : "SECOND YEAR";
+    link = "second-year.html";
+  }
+
+  document.getElementById("selectedYear").textContent = title;
+  document.getElementById("tradeLink").href = link;
+  window.scrollTo({top: 0, behavior: "smooth"});
+}
+
+function goBack() {
+  document.getElementById("yearSection").style.display = "block";
+  document.getElementById("tradeSection").style.display = "none";
+  window.scrollTo({top: 0, behavior: "smooth"});
+}
+
+try {
+  const savedLanguage = localStorage.getItem("myItiLanguage");
+  if (["en", "te", "hi"].includes(savedLanguage)) {
+    changeLanguage(savedLanguage);
+  }
+} catch(error) {}
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function() {
+    navigator.serviceWorker.register("service-worker.js")
+      .catch(function(error) {
+        console.log("Service worker error:", error);
+      });
+  });
+}
+</script>
+
+</body>
+</html>
+e("data-te")
             : element.getAttribute("data-en");
       });
 
