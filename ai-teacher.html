@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MY ITI STUDY - AI Teacher</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:linear-gradient(140deg,#071b3b,#123e70,#087e91);
+ color:white;min-height:100vh;
+}
+header{
+ padding:18px 12px;text-align:center;
+ background:#06152de8;
+ border-bottom:1px solid #ffffff30;
+}
+header h2{margin:0;color:#55e5ff}
+header p{margin:7px 0 0;color:#c9eaff;font-size:13px}
+.container{max-width:650px;margin:auto;padding:18px}
+.teacher{
+ text-align:center;padding:20px 12px;
+ background:#ffffff12;border:1px solid #ffffff30;
+ border-radius:22px;
+}
+.online{color:#76ffb2;font-size:13px}
+.avatar{
+ width:170px;height:190px;margin:15px auto;
+ position:relative;
+ display:flex;align-items:center;justify-content:center;
+}
+.avatar .head{
+ width:125px;height:135px;border-radius:48% 48% 45% 45%;
+ background:linear-gradient(145deg,#ffe0c2,#d99b72);
+ border:5px solid #f5c6a2;
+ position:relative;
+ box-shadow:0 12px 25px #0005;
+}
+.hair{
+ position:absolute;top:-9px;left:5px;width:105px;height:48px;
+ background:#29202a;border-radius:55% 55% 25% 25%;
+}
+.eye{
+ position:absolute;top:57px;width:10px;height:13px;
+ background:#24202a;border-radius:50%;
+}
+.eye.left{left:32px}.eye.right{right:32px}
+.smile{
+ position:absolute;top:88px;left:42px;
+ width:35px;height:17px;border-bottom:4px solid #9e3e43;
+ border-radius:50%;
+}
+.cap{
+ position:absolute;top:-24px;left:-4px;
+ width:132px;height:18px;background:#173b79;
+ border-radius:50%;
+}
+.cap:before{
+ content:"";position:absolute;left:43px;top:-18px;
+ width:48px;height:20px;background:#173b79;
+ transform:skew(-25deg);
+}
+.neck{
+ position:absolute;bottom:-13px;left:47px;
+ width:30px;height:25px;background:#d99b72;
+}
+.body{
+ position:absolute;bottom:-40px;left:13px;
+ width:100px;height:65px;border-radius:35px 35px 15px 15px;
+ background:linear-gradient(90deg,#e9f5ff,#ffffff,#b7d7f3);
+}
+.teacher h2{margin:10px 0 5px}
+.teacher p{color:#e0f3ff;line-height:1.5}
+.chat{
+ margin-top:18px;background:#ffffff12;
+ border:1px solid #ffffff30;border-radius:20px;
+ padding:15px;
+}
+.messages{min-height:120px;max-height:300px;overflow:auto}
+.msg{
+ padding:12px;margin:9px 0;border-radius:13px;
+ line-height:1.5;white-space:pre-wrap;
+}
+.bot{background:#164c70}
+.user{background:#087c70;text-align:right}
+.inputrow{display:flex;gap:8px;margin-top:12px}
+input{
+ flex:1;min-width:0;padding:14px;
+ border:0;border-radius:12px;font-size:15px;
+}
+button{
+ border:0;border-radius:12px;padding:12px 15px;
+ background:#16c9c1;color:#06243c;
+ font-weight:bold;font-size:15px;
+}
+.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}
+.actions button{background:#244f80;color:white}
+.note{font-size:12px;color:#c8dff3;text-align:center;line-height:1.5}
+</style>
+</head>
+<body>
+<header>
+ <h2>MY ITI STUDY</h2>
+ <p>Learn • Practice • Success</p>
+</header>
+
+<div class="container">
+ <section class="teacher">
+  <div class="online">● AI गुरुजी ऑनलाइन</div>
+  <div class="avatar">
+   <div class="head">
+    <div class="hair"></div>
+    <div class="cap"></div>
+    <div class="eye left"></div>
+    <div class="eye right"></div>
+    <div class="smile"></div>
+    <div class="neck"></div>
+    <div class="body"></div>
+   </div>
+  </div>
+  <h2>नमस्ते विद्यार्थी! 👋</h2>
+  <p>मैं आपका AI गुरुजी हूँ।<br>
+  चलिए, मिलकर कुछ नया सीखते हैं!</p>
+ </section>
+
+ <section class="chat">
+  <div class="messages" id="messages">
+   <div class="msg bot">
+    नमस्ते! आपका स्वागत है। 😊
+    अपना सवाल नीचे लिखिए।
+   </div>
+  </div>
+  <div class="inputrow">
+   <input id="question" placeholder="अपना सवाल यहाँ लिखें..." />
+   <button onclick="sendMessage()">भेजें</button>
+  </div>
+  <div class="actions">
+   <button onclick="speakLast()">🔊 जवाब सुनें</button>
+   <button onclick="clearChat()">नई बातचीत</button>
+  </div>
+ </section>
+ <p class="note">
+  यह शुरुआती AI Teacher स्क्रीन है। असली AI जवाबों के लिए
+  सुरक्षित AI सर्वर कनेक्शन अगला चरण होगा।
+ </p>
+</div>
+
+<script>
+let lastAnswer="";
+
+function sendMessage(){
+ const input=document.getElementById("question");
+ const messages=document.getElementById("messages");
+ const q=input.value.trim();
+ if(!q)return;
+
+ messages.innerHTML +=
+ '<div class="msg user"></div>';
+ messages.lastElementChild.textContent=q;
+ input.value="";
+
+ const answer="आपका सवाल मिल गया! 😊 असली AI गुरुजी से सही जवाब पाने के लिए AI कनेक्शन जोड़ना बाकी है।";
+
+ messages.innerHTML += '<div class="msg bot"></div>';
+ messages.lastElementChild.textContent=answer;
+ lastAnswer=answer;
+ messages.scrollTop=messages.scrollHeight;
+}
+
+function speakLast(){
+ if(!lastAnswer){
+  lastAnswer="नमस्ते विद्यार्थी! अपना सवाल लिखिए।";
+ }
+ if("speechSynthesis" in window){
+  const speech=new SpeechSynthesisUtterance(lastAnswer);
+  speech.lang="hi-IN";
+  speechSynthesis.speak(speech);
+ }
+}
+
+function clearChat(){
+ document.getElementById("messages").innerHTML=
+ '<div class="msg bot">नई बातचीत शुरू करें। 😊</div>';
+ lastAnswer="";
+}
+document.getElementById("question").addEventListener("keydown",function(e){
+ if(e.key==="Enter")sendMessage();
+});
+</script>
+</body>
+  </html>
+  
