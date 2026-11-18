@@ -409,37 +409,3 @@ changeLanguage("en");
 
 </body>
 </html>
- "te");
-
-      englishBtn.setAttribute("aria-pressed", language === "en");
-      teluguBtn.setAttribute("aria-pressed", language === "te");
-
-      try {
-        localStorage.setItem("myItiLanguage", language);
-      } catch (error) {
-        // Language switching still works if storage is unavailable.
-      }
-    }
-
-    try {
-      const savedLanguage = localStorage.getItem("myItiLanguage");
-      if (savedLanguage === "te" || savedLanguage === "en") {
-        changeLanguage(savedLanguage);
-      }
-    } catch (error) {
-      // English is the default language.
-    }
-
-    if ("serviceWorker" in navigator) {
-      window.addEventListener("load", function() {
-        navigator.serviceWorker.register("service-worker.js")
-          .catch(function(error) {
-            console.log("Service worker registration failed:", error);
-          });
-      });
-    }
-  </script>
-
-</body>
-      </html>
-      
