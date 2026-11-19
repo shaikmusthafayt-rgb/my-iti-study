@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SHAIK MUSTHAFA - AI TEACHER</title>
+<title>SHAIK MUSTHAFA AI TEACHER</title>
 
 <style>
 *{box-sizing:border-box}
@@ -12,28 +12,28 @@
 body{
  margin:0;
  font-family:Arial,sans-serif;
- background:linear-gradient(145deg,#06152e,#103d65,#087e91);
  color:white;
+ background:linear-gradient(145deg,#06152e,#103e68,#087e91);
  min-height:100vh;
 }
 
 header{
  text-align:center;
- padding:16px 10px;
- background:#06152df2;
+ padding:15px 8px;
+ background:#06152df5;
  border-bottom:1px solid #ffffff30;
 }
 
 header h2{
  margin:0;
- color:#58e8ff;
+ color:#5ceaff;
  letter-spacing:2px;
 }
 
 header p{
  margin:6px 0 0;
  font-size:12px;
- color:#c7eaff;
+ color:#d2edff;
 }
 
 .container{
@@ -42,154 +42,193 @@ header p{
  padding:12px;
 }
 
-/* TEACHER ALWAYS VISIBLE */
+/* TEACHER STAYS VISIBLE */
 
 .teacher{
  position:sticky;
  top:0;
- z-index:5;
+ z-index:10;
  text-align:center;
- padding:12px 10px;
- background:linear-gradient(145deg,#164b70,#092744);
- border:1px solid #ffffff35;
+ padding:10px;
+ background:linear-gradient(145deg,#164c70,#092844);
+ border:1px solid #ffffff45;
  border-radius:22px;
- box-shadow:0 8px 25px #0006;
+ box-shadow:0 8px 25px #0008;
 }
 
-.online{
+.status{
  color:#7dffb8;
  font-size:12px;
 }
 
-.avatar{
- width:175px;
- height:185px;
- margin:8px auto 0;
+.stage{
+ height:205px;
  position:relative;
  display:flex;
  justify-content:center;
+ align-items:flex-start;
+ margin-top:5px;
+}
+
+/* 3D STYLE AVATAR */
+
+.avatar{
+ width:190px;
+ height:200px;
+ position:relative;
+}
+
+.shirt{
+ position:absolute;
+ bottom:0;
+ left:8px;
+ width:174px;
+ height:77px;
+ border-radius:75px 75px 15px 15px;
+ background:linear-gradient(100deg,#8ebce2,#ffffff,#a6cbea);
+ box-shadow:0 12px 20px #0006;
+}
+
+.collar{
+ position:absolute;
+ bottom:58px;
+ left:72px;
+ width:46px;
+ height:35px;
+ background:#f5faff;
+ clip-path:polygon(0 0,50% 100%,100% 0);
+}
+
+.tie{
+ position:absolute;
+ bottom:22px;
+ left:87px;
+ width:19px;
+ height:54px;
+ background:linear-gradient(90deg,#092e69,#2867ad);
+ clip-path:polygon(0 0,100% 0,75% 100%,50% 84%,25% 100%);
+}
+
+.neck{
+ position:absolute;
+ top:117px;
+ left:81px;
+ width:30px;
+ height:39px;
+ background:linear-gradient(90deg,#bd8060,#e8ad88);
+ border-radius:5px;
 }
 
 .head{
  position:absolute;
- top:18px;
- width:116px;
- height:130px;
- border-radius:48% 48% 45% 45%;
- background:linear-gradient(120deg,#ffe5c9,#d79b75);
- border:3px solid #f7d0af;
- box-shadow:inset -10px -8px 14px #9c594455,
- 0 12px 22px #0006;
+ top:8px;
+ left:33px;
+ width:124px;
+ height:137px;
+ border-radius:48% 48% 46% 46%;
+ background:radial-gradient(ellipse at 35% 28%,#ffe9d3,#edbb96 65%,#bd8060);
+ border:2px solid #ffd9b8;
+ box-shadow:
+ inset -10px -9px 18px #a45d4938,
+ inset 8px 6px 15px #ffffff70,
+ 0 12px 24px #0008;
+ z-index:2;
 }
 
 .hair{
  position:absolute;
- top:-5px;
- left:2px;
- width:105px;
- height:43px;
- border-radius:55% 55% 20% 20%;
- background:linear-gradient(130deg,#3c3037,#10101b);
+ top:-3px;
+ left:1px;
+ width:118px;
+ height:44px;
+ border-radius:55% 55% 24% 24%;
+ background:linear-gradient(120deg,#39313a,#100e18);
+ box-shadow:0 4px 7px #0005;
 }
+
+.ear{
+ position:absolute;
+ top:55px;
+ width:15px;
+ height:27px;
+ background:#e7ad88;
+ border-radius:50%;
+ z-index:-1;
+}
+
+.ear.left{left:-10px}
+.ear.right{right:-10px}
 
 .eye{
  position:absolute;
- top:58px;
- width:10px;
- height:13px;
- background:#171827;
+ top:59px;
+ width:11px;
+ height:15px;
  border-radius:50%;
+ background:#171827;
+ box-shadow:0 1px 2px #0005;
 }
 
-.eye.left{left:29px}
-.eye.right{right:29px}
+.eye.left{left:31px}
+.eye.right{right:31px}
 
 .nose{
  position:absolute;
- top:69px;
- left:53px;
- width:10px;
- height:17px;
- border-right:2px solid #b8795d;
+ top:68px;
+ left:55px;
+ width:12px;
+ height:22px;
+ border-right:2px solid #b77a5e;
  border-radius:50%;
 }
 
 .mouth{
  position:absolute;
- top:95px;
- left:43px;
- width:28px;
- height:10px;
- border-bottom:3px solid #883c45;
+ top:100px;
+ left:45px;
+ width:32px;
+ height:11px;
+ border-bottom:3px solid #883e48;
  border-radius:50%;
 }
 
-.neck{
- position:absolute;
- bottom:-18px;
- left:43px;
- width:28px;
- height:27px;
- background:#d99b76;
-}
-
-.shirt{
- position:absolute;
- top:126px;
- left:-27px;
- width:170px;
- height:57px;
- background:linear-gradient(100deg,#b6d9f3,#ffffff,#a6c9e8);
- border-radius:55px 55px 12px 12px;
- box-shadow:0 8px 15px #0005;
-}
-
-.tie{
- position:absolute;
- top:130px;
- left:48px;
- width:18px;
- height:44px;
- background:#174b8b;
- clip-path:polygon(0 0,100% 0,75% 100%,50% 85%,25% 100%);
-}
-
 .teacher-name{
- margin:3px 0;
+ color:#62eaff;
  font-size:22px;
  font-weight:bold;
- color:#65eaff;
  letter-spacing:1px;
+ margin:3px 0 7px;
 }
 
 .teacher-line{
- margin:5px 0;
- font-size:13px;
- color:#e0f4ff;
+ color:#e5f5ff;
+ font-size:15px;
+ margin:5px 0 9px;
 }
 
-/* CHAT AREA */
+/* CHAT */
 
 .chat{
  margin-top:12px;
- background:#ffffff12;
- border:1px solid #ffffff30;
+ padding:14px;
+ border:1px solid #ffffff35;
  border-radius:20px;
- padding:13px;
+ background:#ffffff12;
 }
 
 .chat-title{
  text-align:center;
- font-size:18px;
+ font-size:20px;
  font-weight:bold;
  margin:5px 0 12px;
 }
 
 .messages{
- height:240px;
+ height:230px;
  overflow-y:auto;
  padding:5px;
- scroll-behavior:smooth;
+ background:#071f3938;
+ border-radius:14px;
 }
 
 .msg{
@@ -207,28 +246,56 @@ header p{
  text-align:right;
 }
 
+.mic-area{
+ text-align:center;
+ padding:16px 0 12px;
+}
+
+.mic{
+ width:90px;
+ height:90px;
+ border-radius:50%;
+ color:white;
+ font-size:37px;
+ background:linear-gradient(145deg,#35e4d5,#087bb7);
+ box-shadow:0 0 0 9px #35e5d522,0 10px 25px #0006;
+}
+
+.mic.listening{
+ background:linear-gradient(145deg,#ff5d69,#bd174c);
+ animation:pulse 1s infinite;
+}
+
+@keyframes pulse{
+ 50%{box-shadow:0 0 0 17px #ff536633}
+}
+
+.mic-text{
+ margin-top:12px;
+ font-size:13px;
+ color:#d8efff;
+}
+
 .inputrow{
  display:flex;
- gap:7px;
+ gap:8px;
  margin-top:10px;
 }
 
 input{
  flex:1;
  min-width:0;
- padding:13px;
+ padding:14px;
  border:0;
  border-radius:12px;
  font-size:15px;
 }
 
-button{
+.send,.clear{
  border:0;
  border-radius:12px;
  padding:12px 15px;
  font-weight:bold;
- font-size:14px;
- cursor:pointer;
 }
 
 .send{
@@ -236,46 +303,20 @@ button{
  color:#06243c;
 }
 
-.mic-area{
- text-align:center;
- margin:17px 0 10px;
-}
-
-.mic{
- width:82px;
- height:82px;
- border-radius:50%;
- background:linear-gradient(145deg,#36e5d5,#087bb7);
- color:white;
- font-size:34px;
- box-shadow:0 0 0 8px #35e5d522,
- 0 10px 25px #0006;
-}
-
-.mic-text{
- margin-top:10px;
- font-size:13px;
- color:#d7efff;
-}
-
-.actions{
- text-align:center;
- margin-top:12px;
-}
-
-.actions button{
+.clear{
+ display:block;
+ margin:12px auto 0;
  background:#244f80;
  color:white;
 }
 
 .note{
  text-align:center;
+ color:#c5dff1;
  font-size:12px;
- color:#bdd8ee;
  line-height:1.5;
- padding:10px;
+ padding:10px 5px;
 }
-
 </style>
 </head>
 
@@ -290,27 +331,30 @@ button{
 
 <section class="teacher">
 
- <div class="online">● TEACHER PRESENT</div>
+ <div class="status">● SHAIK MUSTHAFA IS HERE</div>
 
- <div class="avatar">
+ <div class="stage">
+  <div class="avatar">
 
-  <div class="shirt"></div>
-  <div class="tie"></div>
-
-  <div class="head">
-   <div class="hair"></div>
-   <div class="eye left"></div>
-   <div class="eye right"></div>
-   <div class="nose"></div>
-   <div class="mouth"></div>
+   <div class="shirt"></div>
+   <div class="collar"></div>
+   <div class="tie"></div>
    <div class="neck"></div>
+
+   <div class="head">
+    <div class="hair"></div>
+    <div class="ear left"></div>
+    <div class="ear right"></div>
+    <div class="eye left"></div>
+    <div class="eye right"></div>
+    <div class="nose"></div>
+    <div class="mouth"></div>
+   </div>
+
   </div>
-
  </div>
 
- <div class="teacher-name">
-  SHAIK MUSTHAFA
- </div>
+ <div class="teacher-name">SHAIK MUSTHAFA</div>
 
  <div class="teacher-line">
   What is your question?
@@ -320,9 +364,7 @@ button{
 
 <section class="chat">
 
- <div class="chat-title">
-  Ask Your Question
- </div>
+ <div class="chat-title">Ask Your Question</div>
 
  <div class="messages" id="messages">
   <div class="msg bot">
@@ -332,31 +374,32 @@ button{
  </div>
 
  <div class="mic-area">
-  <button class="mic" onclick="startMic()">🎙️</button>
+  <button class="mic" id="micButton"
+   onclick="startMic()">🎙️</button>
+
   <div class="mic-text" id="micText">
-   Tap the microphone to speak
+   Tap microphone and speak
   </div>
  </div>
 
  <div class="inputrow">
-  <input
-   id="question"
-   placeholder="Type your question here..."
-  >
+  <input id="question"
+   placeholder="Type your question here...">
   <button class="send" onclick="sendMessage()">
    SEND
   </button>
  </div>
 
- <div class="actions">
-  <button onclick="clearChat()">NEW CHAT</button>
- </div>
+ <button class="clear" onclick="clearChat()">
+  NEW CHAT
+ </button>
 
 </section>
 
 <p class="note">
- AI connection is the next development step.
- This screen is the new teacher design.
+ First step: Teacher screen and microphone interface.
+ Real AI answers and automatic multilingual voice
+ connection will be added in the next step.
 </p>
 
 </div>
@@ -382,56 +425,79 @@ function sendMessage(){
  input.value="";
 
  addMessage(
-  "Your question is received. The real AI connection is not connected yet.",
+  "Your question is received. The AI answer connection will be added in the next step.",
   "bot"
  );
 }
 
 function startMic(){
- const micText=document.getElementById("micText");
 
- const SpeechRecognition=
+ const Recognition=
   window.SpeechRecognition ||
   window.webkitSpeechRecognition;
 
- if(!SpeechRecognition){
+ const mic=document.getElementById("micButton");
+ const micText=document.getElementById("micText");
+
+ if(!Recognition){
   micText.textContent=
    "Voice recognition is not supported in this browser.";
   return;
  }
 
- const recognition=new SpeechRecognition();
+ const recognition=new Recognition();
 
- recognition.lang="en-IN";
+ recognition.lang=navigator.language || "en-IN";
  recognition.interimResults=false;
+ recognition.continuous=false;
 
- micText.textContent="Listening...";
+ mic.classList.add("listening");
+ micText.textContent="Listening... Speak now";
 
  recognition.onresult=function(event){
   const spoken=event.results[0][0].transcript;
+
   document.getElementById("question").value=spoken;
-  micText.textContent="Voice received. Press SEND.";
+
+  addMessage(spoken,"user");
+
+  addMessage(
+   "Your voice was received. Real AI answer connection is the next step.",
+   "bot"
+  );
+
+  document.getElementById("question").value="";
  };
 
  recognition.onerror=function(){
   micText.textContent="Could not hear. Please try again.";
  };
 
- recognition.onend=function(){};
+ recognition.onend=function(){
+  mic.classList.remove("listening");
+  if(micText.textContent==="Listening... Speak now"){
+   micText.textContent="Tap microphone and speak";
+  }
+ };
 
- recognition.start();
+ try{
+  recognition.start();
+ }catch(error){
+  mic.classList.remove("listening");
+  micText.textContent="Please try again.";
+ }
 }
 
 function clearChat(){
  document.getElementById("messages").innerHTML=
  '<div class="msg bot">Hello! I am Shaik Musthafa. What is your question?</div>';
  document.getElementById("micText").textContent=
- "Tap the microphone to speak";
+ "Tap microphone and speak";
 }
 
 document.getElementById("question").addEventListener(
- "keydown",function(e){
-  if(e.key==="Enter")sendMessage();
+ "keydown",function(event){
+  if(event.key==="Enter")sendMessage();
  }
 );
 
