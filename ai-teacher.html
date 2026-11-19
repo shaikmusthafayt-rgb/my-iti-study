@@ -1,195 +1,409 @@
 
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MY ITI STUDY - AI Teacher</title>
+
 <style>
 *{box-sizing:border-box}
+
 body{
  margin:0;
  font-family:Arial,sans-serif;
- background:linear-gradient(140deg,#071b3b,#123e70,#087e91);
- color:white;min-height:100vh;
+ color:white;
+ min-height:100vh;
+ background:radial-gradient(circle at top,#17658c,#07172f 70%);
 }
+
 header{
- padding:18px 12px;text-align:center;
- background:#06152de8;
+ text-align:center;
+ padding:18px;
+ background:#06152ddd;
  border-bottom:1px solid #ffffff30;
 }
-header h2{margin:0;color:#55e5ff}
-header p{margin:7px 0 0;color:#c9eaff;font-size:13px}
-.container{max-width:650px;margin:auto;padding:18px}
+
+header h2{
+ margin:0;
+ color:#63eaff;
+ letter-spacing:2px;
+}
+
+header p{
+ margin:7px 0 0;
+ color:#c6eaff;
+ font-size:13px;
+}
+
+.container{
+ max-width:650px;
+ margin:auto;
+ padding:18px;
+}
+
 .teacher{
- text-align:center;padding:20px 12px;
- background:#ffffff12;border:1px solid #ffffff30;
- border-radius:22px;
+ text-align:center;
+ padding:22px 12px;
+ border:1px solid #ffffff30;
+ border-radius:25px;
+ background:linear-gradient(145deg,#ffffff20,#ffffff08);
+ box-shadow:0 15px 40px #0005;
 }
-.online{color:#76ffb2;font-size:13px}
+
+.status{
+ color:#7dffbd;
+ font-size:13px;
+}
+
+.stage{
+ height:250px;
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ perspective:800px;
+}
+
 .avatar{
- width:170px;height:190px;margin:15px auto;
+ width:190px;
+ height:220px;
  position:relative;
- display:flex;align-items:center;justify-content:center;
+ animation:float 3s ease-in-out infinite;
 }
-.avatar .head{
- width:125px;height:135px;border-radius:48% 48% 45% 45%;
- background:linear-gradient(145deg,#ffe0c2,#d99b72);
- border:5px solid #f5c6a2;
- position:relative;
- box-shadow:0 12px 25px #0005;
+
+@keyframes float{
+ 0%,100%{transform:translateY(0)}
+ 50%{transform:translateY(-9px)}
 }
+
+.head{
+ position:absolute;
+ top:18px;
+ left:33px;
+ width:125px;
+ height:140px;
+ border-radius:48% 48% 45% 45%;
+ background:linear-gradient(120deg,#ffe2c5,#d99b76);
+ box-shadow:inset -12px -8px 15px #9c594455,0 15px 25px #0007;
+ border:2px solid #ffdfc2;
+}
+
 .hair{
- position:absolute;top:-9px;left:5px;width:105px;height:48px;
- background:#29202a;border-radius:55% 55% 25% 25%;
+ position:absolute;
+ top:-5px;
+ left:4px;
+ width:112px;
+ height:48px;
+ background:linear-gradient(120deg,#302638,#090c18);
+ border-radius:55% 55% 25% 25%;
 }
-.eye{
- position:absolute;top:57px;width:10px;height:13px;
- background:#24202a;border-radius:50%;
-}
-.eye.left{left:32px}.eye.right{right:32px}
-.smile{
- position:absolute;top:88px;left:42px;
- width:35px;height:17px;border-bottom:4px solid #9e3e43;
- border-radius:50%;
-}
+
 .cap{
- position:absolute;top:-24px;left:-4px;
- width:132px;height:18px;background:#173b79;
+ position:absolute;
+ top:-24px;
+ left:-5px;
+ width:135px;
+ height:19px;
+ background:linear-gradient(#285caa,#102b63);
  border-radius:50%;
+ box-shadow:0 4px 7px #0005;
 }
+
 .cap:before{
- content:"";position:absolute;left:43px;top:-18px;
- width:48px;height:20px;background:#173b79;
+ content:"";
+ position:absolute;
+ top:-17px;
+ left:42px;
+ width:50px;
+ height:20px;
+ background:#285caa;
  transform:skew(-25deg);
 }
-.neck{
- position:absolute;bottom:-13px;left:47px;
- width:30px;height:25px;background:#d99b72;
+
+.eye{
+ position:absolute;
+ top:65px;
+ width:11px;
+ height:14px;
+ background:#171b29;
+ border-radius:50%;
 }
+
+.eye.left{left:32px}
+.eye.right{right:32px}
+
+.nose{
+ position:absolute;
+ top:77px;
+ left:57px;
+ width:12px;
+ height:17px;
+ border-right:2px solid #b9785e;
+ border-radius:50%;
+}
+
+.mouth{
+ position:absolute;
+ top:105px;
+ left:46px;
+ width:32px;
+ height:12px;
+ border-bottom:3px solid #873d45;
+ border-radius:50%;
+}
+
 .body{
- position:absolute;bottom:-40px;left:13px;
- width:100px;height:65px;border-radius:35px 35px 15px 15px;
- background:linear-gradient(90deg,#e9f5ff,#ffffff,#b7d7f3);
+ position:absolute;
+ top:145px;
+ left:12px;
+ width:165px;
+ height:75px;
+ background:linear-gradient(100deg,#d8eaff,#fff,#9dc7ec);
+ border-radius:65px 65px 18px 18px;
+ box-shadow:0 15px 25px #0006;
 }
-.teacher h2{margin:10px 0 5px}
-.teacher p{color:#e0f3ff;line-height:1.5}
+
+.tie{
+ position:absolute;
+ top:151px;
+ left:91px;
+ width:20px;
+ height:48px;
+ background:#164b8b;
+ clip-path:polygon(0 0,100% 0,75% 100%,50% 85%,25% 100%);
+}
+
+.teacher h2{
+ margin:10px 0;
+ font-size:24px;
+}
+
+.teacher p{
+ color:#d7efff;
+ line-height:1.5;
+}
+
 .chat{
- margin-top:18px;background:#ffffff12;
- border:1px solid #ffffff30;border-radius:20px;
- padding:15px;
+ margin-top:18px;
+ padding:17px;
+ border-radius:22px;
+ background:#ffffff12;
+ border:1px solid #ffffff30;
 }
-.messages{min-height:120px;max-height:300px;overflow:auto}
+
+.question-title{
+ text-align:center;
+ font-size:21px;
+ font-weight:bold;
+ margin:5px 0 18px;
+}
+
+.messages{
+ min-height:100px;
+ max-height:250px;
+ overflow:auto;
+}
+
 .msg{
- padding:12px;margin:9px 0;border-radius:13px;
- line-height:1.5;white-space:pre-wrap;
+ padding:13px;
+ margin:9px 0;
+ border-radius:14px;
+ line-height:1.5;
+ white-space:pre-wrap;
 }
+
 .bot{background:#164c70}
 .user{background:#087c70;text-align:right}
-.inputrow{display:flex;gap:8px;margin-top:12px}
+
+.inputrow{
+ display:flex;
+ gap:8px;
+ margin-top:14px;
+}
+
 input{
- flex:1;min-width:0;padding:14px;
- border:0;border-radius:12px;font-size:15px;
+ flex:1;
+ min-width:0;
+ padding:14px;
+ border:0;
+ border-radius:13px;
+ font-size:15px;
 }
+
 button{
- border:0;border-radius:12px;padding:12px 15px;
- background:#16c9c1;color:#06243c;
- font-weight:bold;font-size:15px;
+ border:0;
+ border-radius:13px;
+ padding:13px 17px;
+ font-weight:bold;
+ font-size:15px;
+ cursor:pointer;
+ background:#45e1d5;
+ color:#06243c;
 }
-.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}
-.actions button{background:#244f80;color:white}
-.note{font-size:12px;color:#c8dff3;text-align:center;line-height:1.5}
+
+.mic-area{
+ text-align:center;
+ margin:22px 0 12px;
+}
+
+.mic{
+ width:105px;
+ height:105px;
+ border-radius:50%;
+ font-size:39px;
+ color:white;
+ background:linear-gradient(145deg,#24d9d1,#087fbb);
+ box-shadow:0 0 0 10px #27d9d122,0 12px 30px #0006;
+}
+
+.mic:active{
+ transform:scale(.94);
+}
+
+.mic-text{
+ margin-top:15px;
+ color:#d8f3ff;
+ font-size:14px;
+}
+
+.actions{
+ display:flex;
+ justify-content:center;
+ gap:10px;
+ margin-top:15px;
+ flex-wrap:wrap;
+}
+
+.actions button{
+ background:#244f80;
+ color:white;
+}
+
+.note{
+ text-align:center;
+ color:#bdd8ee;
+ font-size:12px;
+ line-height:1.5;
+ margin:18px 5px;
+}
 </style>
 </head>
+
 <body>
+
 <header>
  <h2>MY ITI STUDY</h2>
- <p>Learn • Practice • Success</p>
+ <p>YOUR PERSONAL AI TEACHER</p>
 </header>
 
 <div class="container">
- <section class="teacher">
-  <div class="online">● AI गुरुजी ऑनलाइन</div>
+
+<section class="teacher">
+
+ <div class="status">● AI TEACHER DESIGN</div>
+
+ <div class="stage">
   <div class="avatar">
+   <div class="body"></div>
+   <div class="tie"></div>
+
    <div class="head">
     <div class="hair"></div>
     <div class="cap"></div>
     <div class="eye left"></div>
     <div class="eye right"></div>
-    <div class="smile"></div>
-    <div class="neck"></div>
-    <div class="body"></div>
+    <div class="nose"></div>
+    <div class="mouth"></div>
    </div>
   </div>
-  <h2>नमस्ते विद्यार्थी! 👋</h2>
-  <p>मैं आपका AI गुरुजी हूँ।<br>
-  चलिए, मिलकर कुछ नया सीखते हैं!</p>
- </section>
+ </div>
 
- <section class="chat">
-  <div class="messages" id="messages">
-   <div class="msg bot">
-    नमस्ते! आपका स्वागत है। 😊
-    अपना सवाल नीचे लिखिए।
-   </div>
+ <h2>Welcome, Student!</h2>
+ <p>What is your question?<br>
+ I am ready to help you learn.</p>
+
+</section>
+
+<section class="chat">
+
+ <div class="question-title">
+  Ask Your Question
+ </div>
+
+ <div class="messages" id="messages">
+  <div class="msg bot">
+   Hello! What is your question?
   </div>
-  <div class="inputrow">
-   <input id="question" placeholder="अपना सवाल यहाँ लिखें..." />
-   <button onclick="sendMessage()">भेजें</button>
+ </div>
+
+ <div class="mic-area">
+  <button class="mic" onclick="micMessage()">🎙️</button>
+  <div class="mic-text" id="micText">
+   Tap the microphone to speak
   </div>
-  <div class="actions">
-   <button onclick="speakLast()">🔊 जवाब सुनें</button>
-   <button onclick="clearChat()">नई बातचीत</button>
-  </div>
- </section>
- <p class="note">
-  यह शुरुआती AI Teacher स्क्रीन है। असली AI जवाबों के लिए
-  सुरक्षित AI सर्वर कनेक्शन अगला चरण होगा।
- </p>
+ </div>
+
+ <div class="inputrow">
+  <input id="question"
+   placeholder="Type your question here...">
+  <button onclick="sendMessage()">SEND</button>
+ </div>
+
+ <div class="actions">
+  <button onclick="clearChat()">NEW CHAT</button>
+ </div>
+
+</section>
+
+<p class="note">
+ AI voice, automatic language detection and live teacher
+ connection will be added in the next development step.
+</p>
+
 </div>
 
 <script>
-let lastAnswer="";
-
 function sendMessage(){
  const input=document.getElementById("question");
  const messages=document.getElementById("messages");
  const q=input.value.trim();
+
  if(!q)return;
 
- messages.innerHTML +=
- '<div class="msg user"></div>';
- messages.lastElementChild.textContent=q;
+ const user=document.createElement("div");
+ user.className="msg user";
+ user.textContent=q;
+ messages.appendChild(user);
+
+ const bot=document.createElement("div");
+ bot.className="msg bot";
+ bot.textContent=
+ "Your question is received. The real AI connection is not connected yet.";
+ messages.appendChild(bot);
+
  input.value="";
-
- const answer="आपका सवाल मिल गया! 😊 असली AI गुरुजी से सही जवाब पाने के लिए AI कनेक्शन जोड़ना बाकी है।";
-
- messages.innerHTML += '<div class="msg bot"></div>';
- messages.lastElementChild.textContent=answer;
- lastAnswer=answer;
  messages.scrollTop=messages.scrollHeight;
 }
 
-function speakLast(){
- if(!lastAnswer){
-  lastAnswer="नमस्ते विद्यार्थी! अपना सवाल लिखिए।";
- }
- if("speechSynthesis" in window){
-  const speech=new SpeechSynthesisUtterance(lastAnswer);
-  speech.lang="hi-IN";
-  speechSynthesis.speak(speech);
- }
+function micMessage(){
+ document.getElementById("micText").textContent=
+ "Microphone connection will be added in the next step.";
 }
 
 function clearChat(){
  document.getElementById("messages").innerHTML=
- '<div class="msg bot">नई बातचीत शुरू करें। 😊</div>';
- lastAnswer="";
+ '<div class="msg bot">Hello! What is your question?</div>';
+ document.getElementById("micText").textContent=
+ "Tap the microphone to speak";
 }
-document.getElementById("question").addEventListener("keydown",function(e){
- if(e.key==="Enter")sendMessage();
-});
+
+document.getElementById("question").addEventListener(
+ "keydown",function(e){
+  if(e.key==="Enter")sendMessage();
+ }
+);
 </script>
+
 </body>
-  </html>
+ </html>
   
