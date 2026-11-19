@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MY ITI STUDY - AI Teacher</title>
+<title>SHAIK MUSTHAFA - AI TEACHER</title>
 
 <style>
 *{box-sizing:border-box}
@@ -12,266 +12,255 @@
 body{
  margin:0;
  font-family:Arial,sans-serif;
+ background:linear-gradient(145deg,#06152e,#103d65,#087e91);
  color:white;
  min-height:100vh;
- background:radial-gradient(circle at top,#17658c,#07172f 70%);
 }
 
 header{
  text-align:center;
- padding:18px;
- background:#06152ddd;
+ padding:16px 10px;
+ background:#06152df2;
  border-bottom:1px solid #ffffff30;
 }
 
 header h2{
  margin:0;
- color:#63eaff;
+ color:#58e8ff;
  letter-spacing:2px;
 }
 
 header p{
- margin:7px 0 0;
- color:#c6eaff;
- font-size:13px;
+ margin:6px 0 0;
+ font-size:12px;
+ color:#c7eaff;
 }
 
 .container{
  max-width:650px;
  margin:auto;
- padding:18px;
+ padding:12px;
 }
+
+/* TEACHER ALWAYS VISIBLE */
 
 .teacher{
+ position:sticky;
+ top:0;
+ z-index:5;
  text-align:center;
- padding:22px 12px;
- border:1px solid #ffffff30;
- border-radius:25px;
- background:linear-gradient(145deg,#ffffff20,#ffffff08);
- box-shadow:0 15px 40px #0005;
+ padding:12px 10px;
+ background:linear-gradient(145deg,#164b70,#092744);
+ border:1px solid #ffffff35;
+ border-radius:22px;
+ box-shadow:0 8px 25px #0006;
 }
 
-.status{
- color:#7dffbd;
- font-size:13px;
-}
-
-.stage{
- height:250px;
- display:flex;
- justify-content:center;
- align-items:center;
- perspective:800px;
+.online{
+ color:#7dffb8;
+ font-size:12px;
 }
 
 .avatar{
- width:190px;
- height:220px;
+ width:175px;
+ height:185px;
+ margin:8px auto 0;
  position:relative;
- animation:float 3s ease-in-out infinite;
-}
-
-@keyframes float{
- 0%,100%{transform:translateY(0)}
- 50%{transform:translateY(-9px)}
+ display:flex;
+ justify-content:center;
 }
 
 .head{
  position:absolute;
  top:18px;
- left:33px;
- width:125px;
- height:140px;
+ width:116px;
+ height:130px;
  border-radius:48% 48% 45% 45%;
- background:linear-gradient(120deg,#ffe2c5,#d99b76);
- box-shadow:inset -12px -8px 15px #9c594455,0 15px 25px #0007;
- border:2px solid #ffdfc2;
+ background:linear-gradient(120deg,#ffe5c9,#d79b75);
+ border:3px solid #f7d0af;
+ box-shadow:inset -10px -8px 14px #9c594455,
+ 0 12px 22px #0006;
 }
 
 .hair{
  position:absolute;
  top:-5px;
- left:4px;
- width:112px;
- height:48px;
- background:linear-gradient(120deg,#302638,#090c18);
- border-radius:55% 55% 25% 25%;
-}
-
-.cap{
- position:absolute;
- top:-24px;
- left:-5px;
- width:135px;
- height:19px;
- background:linear-gradient(#285caa,#102b63);
- border-radius:50%;
- box-shadow:0 4px 7px #0005;
-}
-
-.cap:before{
- content:"";
- position:absolute;
- top:-17px;
- left:42px;
- width:50px;
- height:20px;
- background:#285caa;
- transform:skew(-25deg);
+ left:2px;
+ width:105px;
+ height:43px;
+ border-radius:55% 55% 20% 20%;
+ background:linear-gradient(130deg,#3c3037,#10101b);
 }
 
 .eye{
  position:absolute;
- top:65px;
- width:11px;
- height:14px;
- background:#171b29;
+ top:58px;
+ width:10px;
+ height:13px;
+ background:#171827;
  border-radius:50%;
 }
 
-.eye.left{left:32px}
-.eye.right{right:32px}
+.eye.left{left:29px}
+.eye.right{right:29px}
 
 .nose{
  position:absolute;
- top:77px;
- left:57px;
- width:12px;
+ top:69px;
+ left:53px;
+ width:10px;
  height:17px;
- border-right:2px solid #b9785e;
+ border-right:2px solid #b8795d;
  border-radius:50%;
 }
 
 .mouth{
  position:absolute;
- top:105px;
- left:46px;
- width:32px;
- height:12px;
- border-bottom:3px solid #873d45;
+ top:95px;
+ left:43px;
+ width:28px;
+ height:10px;
+ border-bottom:3px solid #883c45;
  border-radius:50%;
 }
 
-.body{
+.neck{
  position:absolute;
- top:145px;
- left:12px;
- width:165px;
- height:75px;
- background:linear-gradient(100deg,#d8eaff,#fff,#9dc7ec);
- border-radius:65px 65px 18px 18px;
- box-shadow:0 15px 25px #0006;
+ bottom:-18px;
+ left:43px;
+ width:28px;
+ height:27px;
+ background:#d99b76;
+}
+
+.shirt{
+ position:absolute;
+ top:126px;
+ left:-27px;
+ width:170px;
+ height:57px;
+ background:linear-gradient(100deg,#b6d9f3,#ffffff,#a6c9e8);
+ border-radius:55px 55px 12px 12px;
+ box-shadow:0 8px 15px #0005;
 }
 
 .tie{
  position:absolute;
- top:151px;
- left:91px;
- width:20px;
- height:48px;
- background:#164b8b;
+ top:130px;
+ left:48px;
+ width:18px;
+ height:44px;
+ background:#174b8b;
  clip-path:polygon(0 0,100% 0,75% 100%,50% 85%,25% 100%);
 }
 
-.teacher h2{
- margin:10px 0;
- font-size:24px;
+.teacher-name{
+ margin:3px 0;
+ font-size:22px;
+ font-weight:bold;
+ color:#65eaff;
+ letter-spacing:1px;
 }
 
-.teacher p{
- color:#d7efff;
- line-height:1.5;
+.teacher-line{
+ margin:5px 0;
+ font-size:13px;
+ color:#e0f4ff;
 }
+
+/* CHAT AREA */
 
 .chat{
- margin-top:18px;
- padding:17px;
- border-radius:22px;
+ margin-top:12px;
  background:#ffffff12;
  border:1px solid #ffffff30;
+ border-radius:20px;
+ padding:13px;
 }
 
-.question-title{
+.chat-title{
  text-align:center;
- font-size:21px;
+ font-size:18px;
  font-weight:bold;
- margin:5px 0 18px;
+ margin:5px 0 12px;
 }
 
 .messages{
- min-height:100px;
- max-height:250px;
- overflow:auto;
+ height:240px;
+ overflow-y:auto;
+ padding:5px;
+ scroll-behavior:smooth;
 }
 
 .msg{
- padding:13px;
- margin:9px 0;
- border-radius:14px;
+ padding:12px;
+ margin:8px 0;
+ border-radius:13px;
  line-height:1.5;
  white-space:pre-wrap;
+ overflow-wrap:anywhere;
 }
 
 .bot{background:#164c70}
-.user{background:#087c70;text-align:right}
+.user{
+ background:#087c70;
+ text-align:right;
+}
 
 .inputrow{
  display:flex;
- gap:8px;
- margin-top:14px;
+ gap:7px;
+ margin-top:10px;
 }
 
 input{
  flex:1;
  min-width:0;
- padding:14px;
+ padding:13px;
  border:0;
- border-radius:13px;
+ border-radius:12px;
  font-size:15px;
 }
 
 button{
  border:0;
- border-radius:13px;
- padding:13px 17px;
+ border-radius:12px;
+ padding:12px 15px;
  font-weight:bold;
- font-size:15px;
+ font-size:14px;
  cursor:pointer;
- background:#45e1d5;
+}
+
+.send{
+ background:#35d8ce;
  color:#06243c;
 }
 
 .mic-area{
  text-align:center;
- margin:22px 0 12px;
+ margin:17px 0 10px;
 }
 
 .mic{
- width:105px;
- height:105px;
+ width:82px;
+ height:82px;
  border-radius:50%;
- font-size:39px;
+ background:linear-gradient(145deg,#36e5d5,#087bb7);
  color:white;
- background:linear-gradient(145deg,#24d9d1,#087fbb);
- box-shadow:0 0 0 10px #27d9d122,0 12px 30px #0006;
-}
-
-.mic:active{
- transform:scale(.94);
+ font-size:34px;
+ box-shadow:0 0 0 8px #35e5d522,
+ 0 10px 25px #0006;
 }
 
 .mic-text{
- margin-top:15px;
- color:#d8f3ff;
- font-size:14px;
+ margin-top:10px;
+ font-size:13px;
+ color:#d7efff;
 }
 
 .actions{
- display:flex;
- justify-content:center;
- gap:10px;
- margin-top:15px;
- flex-wrap:wrap;
+ text-align:center;
+ margin-top:12px;
 }
 
 .actions button{
@@ -281,11 +270,12 @@ button{
 
 .note{
  text-align:center;
- color:#bdd8ee;
  font-size:12px;
+ color:#bdd8ee;
  line-height:1.5;
- margin:18px 5px;
+ padding:10px;
 }
+
 </style>
 </head>
 
@@ -300,53 +290,62 @@ button{
 
 <section class="teacher">
 
- <div class="status">● AI TEACHER DESIGN</div>
+ <div class="online">● TEACHER PRESENT</div>
 
- <div class="stage">
-  <div class="avatar">
-   <div class="body"></div>
-   <div class="tie"></div>
+ <div class="avatar">
 
-   <div class="head">
-    <div class="hair"></div>
-    <div class="cap"></div>
-    <div class="eye left"></div>
-    <div class="eye right"></div>
-    <div class="nose"></div>
-    <div class="mouth"></div>
-   </div>
+  <div class="shirt"></div>
+  <div class="tie"></div>
+
+  <div class="head">
+   <div class="hair"></div>
+   <div class="eye left"></div>
+   <div class="eye right"></div>
+   <div class="nose"></div>
+   <div class="mouth"></div>
+   <div class="neck"></div>
   </div>
+
  </div>
 
- <h2>Welcome, Student!</h2>
- <p>What is your question?<br>
- I am ready to help you learn.</p>
+ <div class="teacher-name">
+  SHAIK MUSTHAFA
+ </div>
+
+ <div class="teacher-line">
+  What is your question?
+ </div>
 
 </section>
 
 <section class="chat">
 
- <div class="question-title">
+ <div class="chat-title">
   Ask Your Question
  </div>
 
  <div class="messages" id="messages">
   <div class="msg bot">
-   Hello! What is your question?
+   Hello! I am Shaik Musthafa.
+   What is your question?
   </div>
  </div>
 
  <div class="mic-area">
-  <button class="mic" onclick="micMessage()">🎙️</button>
+  <button class="mic" onclick="startMic()">🎙️</button>
   <div class="mic-text" id="micText">
    Tap the microphone to speak
   </div>
  </div>
 
  <div class="inputrow">
-  <input id="question"
-   placeholder="Type your question here...">
-  <button onclick="sendMessage()">SEND</button>
+  <input
+   id="question"
+   placeholder="Type your question here..."
+  >
+  <button class="send" onclick="sendMessage()">
+   SEND
+  </button>
  </div>
 
  <div class="actions">
@@ -356,43 +355,76 @@ button{
 </section>
 
 <p class="note">
- AI voice, automatic language detection and live teacher
- connection will be added in the next development step.
+ AI connection is the next development step.
+ This screen is the new teacher design.
 </p>
 
 </div>
 
 <script>
+
+function addMessage(text,type){
+ const messages=document.getElementById("messages");
+ const item=document.createElement("div");
+ item.className="msg "+type;
+ item.textContent=text;
+ messages.appendChild(item);
+ messages.scrollTop=messages.scrollHeight;
+}
+
 function sendMessage(){
  const input=document.getElementById("question");
- const messages=document.getElementById("messages");
  const q=input.value.trim();
 
  if(!q)return;
 
- const user=document.createElement("div");
- user.className="msg user";
- user.textContent=q;
- messages.appendChild(user);
-
- const bot=document.createElement("div");
- bot.className="msg bot";
- bot.textContent=
- "Your question is received. The real AI connection is not connected yet.";
- messages.appendChild(bot);
-
+ addMessage(q,"user");
  input.value="";
- messages.scrollTop=messages.scrollHeight;
+
+ addMessage(
+  "Your question is received. The real AI connection is not connected yet.",
+  "bot"
+ );
 }
 
-function micMessage(){
- document.getElementById("micText").textContent=
- "Microphone connection will be added in the next step.";
+function startMic(){
+ const micText=document.getElementById("micText");
+
+ const SpeechRecognition=
+  window.SpeechRecognition ||
+  window.webkitSpeechRecognition;
+
+ if(!SpeechRecognition){
+  micText.textContent=
+   "Voice recognition is not supported in this browser.";
+  return;
+ }
+
+ const recognition=new SpeechRecognition();
+
+ recognition.lang="en-IN";
+ recognition.interimResults=false;
+
+ micText.textContent="Listening...";
+
+ recognition.onresult=function(event){
+  const spoken=event.results[0][0].transcript;
+  document.getElementById("question").value=spoken;
+  micText.textContent="Voice received. Press SEND.";
+ };
+
+ recognition.onerror=function(){
+  micText.textContent="Could not hear. Please try again.";
+ };
+
+ recognition.onend=function(){};
+
+ recognition.start();
 }
 
 function clearChat(){
  document.getElementById("messages").innerHTML=
- '<div class="msg bot">Hello! What is your question?</div>';
+ '<div class="msg bot">Hello! I am Shaik Musthafa. What is your question?</div>';
  document.getElementById("micText").textContent=
  "Tap the microphone to speak";
 }
@@ -402,8 +434,8 @@ document.getElementById("question").addEventListener(
   if(e.key==="Enter")sendMessage();
  }
 );
+
 </script>
 
 </body>
- </html>
-  
+</html>
