@@ -172,7 +172,6 @@ at: "వోల్ట్మీటర్ వోల్టేజ్‌ను కొ�
 const language = document.getElementById("language");
 const search = document.getElementById("search");
 const questions = document.getElementById("questions");
-
 function speak(text, lang) {
   if (!("speechSynthesis" in window)) {
     alert("Speech is not supported on this phone.");
@@ -187,9 +186,11 @@ function speak(text, lang) {
     lang === "hi" ? "hi-IN" :
     lang === "te" ? "te-IN" : "en-IN";
 
-  voice.rate = 0.9;
+  voice.rate = 1;
+
+  window.speechSynthesis.resume();
   window.speechSynthesis.speak(voice);
-}
+  }
 
 function render() {
   const lang = language.value;
